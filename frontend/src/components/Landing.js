@@ -13,7 +13,6 @@ function Landing() {
       <Link to=''>Sign-up</Link><br />
 
       <subhead>Already have an account? Login Below:</subhead>
-      <Link to=''>Login</Link><br />
       <Login />
     </div>
 
