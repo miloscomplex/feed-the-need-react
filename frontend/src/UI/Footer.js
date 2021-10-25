@@ -1,5 +1,4 @@
 import Nav from './Nav'
-import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
