@@ -56,6 +56,11 @@
    opacity: 0.5;
  }
 
+ subhead {
+   text-transform: uppercase;
+   color: coral;
+ }
+
  footer nav {
    padding-top: .5em;
    margin-top: 3em;
