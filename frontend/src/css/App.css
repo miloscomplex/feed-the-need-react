@@ -23,7 +23,7 @@
    background-color: #ffffff;
    color: #103852;
    margin: 0;
-   background-image: url("images/alley_bw.jpg");
+   background-image: url("../images/alley_bw.jpg");
    background-position: top;
    background-size: cover;
    background-repeat: no-repeat;
@@ -54,6 +54,13 @@
 
  nav img {
    opacity: 0.5;
+ }
+
+ footer nav {
+   padding-top: .5em;
+   margin-top: 3em;
+   color: #888;
+   border-top: 2px solid #bbb;
  }
 
  #content {
@@ -225,11 +232,4 @@ h3 {
   padding: 1.5em;
   border-radius: 5px;
   margin: 2em 0;
-}
-
-.footer {
-  padding-top: .5em;
-  margin-top: 3em;
-  color: #888;
-  border-top: 2px solid #bbb;
 }
