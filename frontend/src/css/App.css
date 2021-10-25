@@ -61,6 +61,8 @@
    color: coral;
  }
 
+
+
  footer nav {
    padding-top: .5em;
    margin-top: 3em;
@@ -70,8 +72,10 @@
 
  #content {
    width: 80%;
-   margin: 2.5em auto 2em auto;
-   background-color: none;
+   /* margin: 2.5em auto 2em auto; */
+   margin: 0 auto 0 auto;
+   background-color: rgba(255, 255, 255, 0.5);
+   padding: 1.4em;
  }
 
  #content a {
