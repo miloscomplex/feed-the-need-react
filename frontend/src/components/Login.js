@@ -7,7 +7,7 @@ function Login() {
 
   return (
     <login>
-      <h1>Login for Donator & Needy</h1>
+      <h2>Login for Donator & Needy</h2>
       <form name='chatBoxForm'>
         <label for='name'>Name:</label>
         <input type='text' />

@@ -13,9 +13,8 @@ function Landing() {
       <subhead>Do you want to help?</subhead>
       <Link to=''>Sign-up</Link>
 
-      <subhead>Already have an account? Login Below:</subhead>
       <Login />
-      
+
     </div>
 
   )
