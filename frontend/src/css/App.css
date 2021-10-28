@@ -74,10 +74,19 @@ nav img {
  footer nav {
    padding-top: .5em;
    margin-top: 3em;
-   color: #888;
    border-top: 2px solid #bbb;
    background-image: none;
    background-color: #fff;
+ }
+
+ footer nav a {
+   color: #888;
+   font-size: 0.9em;
+   font-weight: 500;
+ }
+
+ footer nav a:hover {
+   color: #333;
  }
 
  #content {
@@ -135,8 +144,13 @@ li:hover {
 }
 
 input {
-  margin-top: 1.5em;
   font-family: 'Roboto', sans-serif;
+  display: block;
+}
+
+form label {
+  margin-top: 1.5em;
+  display: block;
 }
 
 input[type='checkbox'] {

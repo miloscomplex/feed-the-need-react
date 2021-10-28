@@ -5,7 +5,9 @@ function NeedyLanding() {
     <div id='content'>
       <h1>Hello [Needy.name]</h1>
       <h2>This is your personal home page</h2>
-      <p className='bio'><strong>Your Bio</strong> bio goes here</p>
+      <p className='bio'>
+        <strong>Your Bio</strong> bio goes here
+      </p>
 
       <Link to=''>Edit your profile</Link>
 
