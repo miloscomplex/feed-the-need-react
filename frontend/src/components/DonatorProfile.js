@@ -7,7 +7,7 @@ function DonatorProfile() {
       <span><strong>Your registered email is:</strong> donator.email </span>
       <p class='about'><strong>About You:</strong> donator.about </p>
 
-      <p><Link to=''>Edit your profile</p>
+      <p><Link to=''>Edit your profile</Link></p>
 
       <activity>
         <h3>Your Recent Activity</h3>
