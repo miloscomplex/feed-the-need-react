@@ -2,10 +2,10 @@ import './css/App.css';
 import Nav from './UI/Nav';
 import Footer from './UI/Footer'
 import Landing from './components/Landing'
-import NeedyLanding from './components/NeedyLanding'
-import DonatorLanding from './components/DonatorLanding'
-import NeedyProfile from './components/NeedyProfile'
-import DonatorProfile from './components/DonatorProfile'
+import NeedyLanding from './needy/components/NeedyLanding'
+import DonatorLanding from './donator/components/DonatorLanding'
+import DisplayNeedyProfile from './components/donator/DisplayNeedyProfile'
+import DonatorProfile from './components/donator/DonatorProfile'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 

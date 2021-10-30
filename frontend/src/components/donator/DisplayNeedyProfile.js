@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function NeedyProfile() {
+function DisplayNeedyProfile() {
   return (
     <div id='content'>
       <h1> This is Needy.name</h1>
@@ -21,4 +21,4 @@ function NeedyProfile() {
   )
 }
 
-export default NeedyProfile;
+export default DisplayNeedyProfile;
