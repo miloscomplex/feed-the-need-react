@@ -2,10 +2,11 @@ import './css/App.css';
 import Nav from './UI/Nav';
 import Footer from './UI/Footer'
 import Landing from './components/Landing'
-import NeedyLanding from './needy/components/NeedyLanding'
-import DonatorLanding from './donator/components/DonatorLanding'
+import NeedyLanding from './components/needy/NeedyLanding'
+import DonatorLanding from './components/donator/DonatorLanding'
 import DisplayNeedyProfile from './components/donator/DisplayNeedyProfile'
 import DonatorProfile from './components/donator/DonatorProfile'
+import SignUp from './components/SignUp'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
@@ -19,7 +20,8 @@ function App() {
           <Route exact path='/needy' component={NeedyLanding} />
           <Route exact path='/donator/profile' component={DonatorProfile} />
           <Route exact path='/donator' component={DonatorLanding} />
-          <Route exact path='/donator/needy-profile' component={NeedyProfile} />
+          <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
+          <Route exact path='/sign-up' component={SignUp} />
         </Switch>
         <Footer />
       </div>

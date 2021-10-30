@@ -175,7 +175,6 @@ input[type='submit']:hover {
 }
 
 textarea {
-  margin-top: 1.5em;
   font-family: Roboto;
   width: 200px;
   height: 80px;
