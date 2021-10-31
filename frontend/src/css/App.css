@@ -28,6 +28,7 @@
 
  body {
    font-family: 'Roboto', sans-serif;
+   font-weight: 400;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    background-color: #ffffff;
@@ -63,7 +64,9 @@ nav img {
  subhead {
    text-transform: uppercase;
    display: block;
-   margin: 1.5em 0 0.8em 0;
+   margin: 0 0 .8em 0;
+   font-size: 1.2em;
+   font-weight: 700;
  }
 
  activity {
@@ -197,6 +200,21 @@ h2  {
 
 h3 {
   text-transform: uppercase;
+}
+
+.cta-wrapper {
+  display: block;
+  /* text-align: center; */
+  margin: 1em 0
+}
+
+.cta {
+  text-align: center;
+  display: inline-block;
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 0 2em 0 0;
 }
 
 .emphasis {
