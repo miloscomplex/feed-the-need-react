@@ -31,6 +31,7 @@ function SignUp() {
 
         <label for='passwor-confirm'>Password Confirmation</label>
         <input type='text' name='password-confirm' onChange={e => setPasswordConfirm(e.target.value)} />
+
         <input type='submit' value='submit' />
       </form>
     </div>
