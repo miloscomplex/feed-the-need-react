@@ -19,12 +19,16 @@
  Roboto weights 300; 400; 700; 900
  */
 
- * {
+ *, *::before, *::after {
    margin: 0;
    padding: 0;
-   box-sizing: border-box;
+   box-sizing: inherit;
  }
 
+ html {
+   font-size: 100%;
+   /* set to 16px for easy fix */
+ }
 
  body {
    font-family: 'Roboto', sans-serif;
@@ -33,13 +37,14 @@
    -moz-osx-font-smoothing: grayscale;
    background-color: #ffffff;
    color: #103852;
+   box-sizing: border-box;
  }
 
  nav {
   background-color: #1e6694;
-  padding: 6em 3em;
+  padding: 6em 3rem;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: #c9edf5;
   text-transform: uppercase;
   background-image: url("../images/alley_bw.jpg");
@@ -50,7 +55,7 @@
 nav a {
   text-decoration-line: none;
   color: #c9edf5;
-  margin: 0 .5em;
+  margin: 0 .5rem;
 }
 
 nav a:hover {
@@ -64,22 +69,22 @@ nav img {
  subhead {
    text-transform: uppercase;
    display: block;
-   margin: 0 0 .8em 0;
-   font-size: 1.2em;
+   margin: 0 0 .8rem 0;
+   font-size: 1.2rem;
    font-weight: 700;
  }
 
  activity {
    background-color: #d9f0f5;
-   padding: 1.5em;
-   border-radius: 5px;
-   margin: 2em 0;
+   padding: 1.5rem;
+   border-radius: 0.5rem;
+   margin: 2rem 0;
    display: block;
  }
 
  footer nav {
-   padding-top: .5em;
-   margin-top: 3em;
+   padding-top: .5rem;
+   margin-top: 3rem;
    border-top: 2px solid #bbb;
    background-image: none;
    background-color: #fff;
@@ -87,7 +92,7 @@ nav img {
 
  footer nav a {
    color: #888;
-   font-size: 0.9em;
+   font-size: 0.9rem;
    font-weight: 500;
  }
 
@@ -99,19 +104,19 @@ nav img {
    width: 80%;
    /* margin: 2.5em auto 2em auto; */
    margin: 0 auto 0 auto;
-   padding: 1.4em;
+   padding: 1.4rem;
  }
 
  #content a {
    background-color: #267a77;
    display: inline-block;
-   padding: .6em .8em;
-   margin: .25em .25em .25em 0;
+   padding: .6rem .8rem;
+   margin: .25rem .25rem .25rem 0;
    text-decoration: none;
    text-transform: uppercase;
-   font-size: .8em;
+   font-size: .8rem;
    color: white;
-   border-radius: 3px;
+   border-radius: 0.3rem;
  }
 
  #content a:hover {
@@ -120,9 +125,9 @@ nav img {
 
  #content a.plain {
    color: #267a77;
-   font-size: .85em;
+   font-size: .85rem;
    background-color: white;
-   padding: .6em 0;
+   padding: .6rem 0;
    margin: 0;
  }
 
@@ -136,13 +141,13 @@ ul  {
 
 li {
   list-style-type: none;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 700;
   border: 1px solid #999999;
-  padding: 1em;
+  padding: 1rem;
   text-transform: capitalize;
-  margin-top: .5em;
-  border-radius: 3px;
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 li:hover {
@@ -155,24 +160,24 @@ input {
 }
 
 form label {
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
   display: block;
 }
 
 input[type='checkbox'] {
-  margin: auto .5em auto 0;
+  margin: auto .5rem auto 0;
 }
 
 input[type='submit'] {
   background-color: #267a77;
   display: inline-block;
-  padding: .6em .8em;
-  margin: 1.5em .25em .25em 0;
+  padding: .6rem .8rem;
+  margin: 1.5rem .25rem .25rem 0;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: .8em;
+  font-size: .8rem;
   color: white;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   border: none;
   cursor: pointer;
 }
@@ -183,18 +188,18 @@ input[type='submit']:hover {
 
 textarea {
   font-family: Roboto;
-  width: 200px;
-  height: 80px;
+  width: 20rem;
+  height: 8rem;
 }
 
 h1  {
   color: #9f5c26;
   border-bottom: 1px solid;
-  padding-bottom: .25em;
+  padding-bottom: .25rem;
 }
 
 h2  {
-  margin-top: 1em;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -205,42 +210,42 @@ h3 {
 .cta-wrapper {
   display: block;
   /* text-align: center; */
-  margin: 1em 0
+  margin: 1rem 0
 }
 
 .cta {
   text-align: center;
   display: inline-block;
-  padding: 2em;
+  padding: 2rem;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 0 2em 0 0;
+  border-radius: 1rem;
+  margin: 0 2rem 0 0;
 }
 
 .emphasis {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-top: .75em;
+  margin-top: .75rem;
 }
 
 .error {
-  margin-top: .5em;
+  margin-top: .5rem;
   color: white;
-  padding: 1em;
+  padding: 1rem;
   background-color: #a31637;
-  border-radius: 10px;
+  border-radius: 1rem;
   font-size: 1em;
   border: 0;
   font-weight: 500;
 }
 
 .alert {
-  margin-top: .5em;
+  margin-top: .5rem;
   color: white;
-  padding: 1em;
+  padding: 1rem;
   background-color: #cbae89;
-  border-radius: 10px;
-  font-size: 1em;
+  border-radius: 1rem;
+  font-size: 1rem;
   border: 0;
   font-weight: 500;
 }
@@ -257,11 +262,11 @@ h3 {
 }
 
 .callout {
-  margin-bottom: -.5em;
+  margin-bottom: -.5rem;
 }
 
 .about {
-  font-size: 1em;
+  font-size: 1rem;
   width: 80%
 }
 
@@ -270,12 +275,12 @@ h3 {
 }
 
 .needy_list {
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5rem;
 }
 
 .needy_list h4 {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-bottom: 0;
   border-bottom: solid 1px;
-  padding-bottom: .25em;
+  padding-bottom: .25rem;
 }
