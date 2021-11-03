@@ -172,11 +172,18 @@ li:hover {
 input {
   font-family: 'Roboto', sans-serif;
   display: block;
+  border-style: none;
+  background-color: #ddd;
+  padding: .5rem;
+  border-radius: 0.2rem;
+  margin: .3rem 0;
 }
 
 form label {
   margin-top: 1.5rem;
   display: block;
+  font-weight: 700;
+  color: #555;
 }
 
 input[type='checkbox'] {
@@ -205,6 +212,13 @@ textarea {
   font-family: Roboto;
   width: 20rem;
   height: 8rem;
+  border-style: none;
+  background-color: #ddd;
+  padding: .5rem;
+  border-radius: 0.2rem;
+  margin: .3rem 0;
+
+
 }
 
 h1  {
