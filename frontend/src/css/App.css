@@ -26,9 +26,9 @@
  }
 
  html {
-   font-size: 100%;
+   /* font-size: 100%; */
    /* set to 16px for easy fix */
-   /* font-size: 62.5%;  */
+   font-size: 62.5%;
    /* makes 1 rem be 10px */
  }
 
@@ -40,13 +40,14 @@
    background-color: #ffffff;
    color: #103852;
    box-sizing: border-box;
+   font-size: 2rem;
  }
 
  nav {
   background-color: #1e6694;
-  padding: 6em 0;
+  padding: 10rem 0;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #c9edf5;
   text-transform: uppercase;
   background-image:
@@ -64,13 +65,13 @@ nav-links {
   display: block;
   /* margin: 2.5em auto 2em auto; */
   margin: 0 auto 0 auto;
-  padding: 1.4rem;
+  padding: 3rem;
 }
 
 nav a {
   text-decoration-line: none;
   color: #c9edf5;
-  margin: 0 .5rem;
+  margin: 0 1rem;
 }
 
 nav a:hover {
@@ -84,21 +85,21 @@ nav img {
  subhead {
    text-transform: uppercase;
    display: block;
-   margin: 0 0 .8rem 0;
-   font-size: 1.2rem;
+   margin: 0 0 1.5rem 0;
+   font-size: 2rem;
    font-weight: 700;
  }
 
  activity {
    background-color: #d9f0f5;
-   padding: 1.5rem;
+   padding: 3rem;
    border-radius: 0.5rem;
-   margin: 2rem 0;
+   margin: 3rem 0;
    display: block;
  }
 
  footer nav {
-   padding-top: .5rem;
+   padding-top: 1.4rem;
    margin-top: 3rem;
    border-top: 2px solid #bbb;
    background-image: none;
@@ -107,7 +108,7 @@ nav img {
 
  footer nav a {
    color: #888;
-   font-size: 0.9rem;
+   font-size: 1.5rem;
    font-weight: 500;
  }
 
@@ -117,7 +118,6 @@ nav img {
 
  #content {
    width: 80%;
-   /* margin: 2.5em auto 2em auto; */
    margin: 0 auto 0 auto;
    padding: 1.4rem;
  }
@@ -129,7 +129,7 @@ nav img {
    margin: .25rem .25rem .25rem 0;
    text-decoration: none;
    text-transform: uppercase;
-   font-size: .8rem;
+   font-size: 1.3rem;
    color: white;
    border-radius: 0.3rem;
  }
@@ -140,7 +140,7 @@ nav img {
 
  #content a.plain {
    color: #267a77;
-   font-size: .85rem;
+   font-size: 1.5rem;
    background-color: white;
    padding: .6rem 0;
    margin: 0;
@@ -156,13 +156,13 @@ ul  {
 
 li {
   list-style-type: none;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 700;
   border: 1px solid #999999;
-  padding: 1rem;
+  padding: 1.5rem;
   text-transform: capitalize;
-  margin-top: 0.5rem;
-  border-radius: 0.3rem;
+  margin-top: 0.8rem;
+  border-radius: 0.6rem;
 }
 
 li:hover {
@@ -174,20 +174,20 @@ input {
   display: block;
   border-style: none;
   background-color: #ddd;
-  padding: .5rem;
+  padding: 0.8rem;
   border-radius: 0.2rem;
-  margin: .3rem 0;
+  margin: .5rem 0;
 }
 
 form label {
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   display: block;
   font-weight: 700;
   color: #555;
 }
 
 input[type='checkbox'] {
-  margin: auto .5rem auto 0;
+  margin: auto .8rem auto 0;
 }
 
 input[type='submit'] {
@@ -197,9 +197,9 @@ input[type='submit'] {
   margin: 1.5rem .25rem .25rem 0;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: 1.5rem;
   color: white;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
 }
@@ -214,9 +214,9 @@ textarea {
   height: 8rem;
   border-style: none;
   background-color: #ddd;
-  padding: .5rem;
-  border-radius: 0.2rem;
-  margin: .3rem 0;
+  padding: .8rem;
+  border-radius: 0.4rem;
+  margin: .5rem 0;
 
 
 }
@@ -224,11 +224,12 @@ textarea {
 h1  {
   color: #9f5c26;
   border-bottom: 1px solid;
-  padding-bottom: .25rem;
+  padding-bottom: .5rem;
+  margin-top: 1rem;
 }
 
 h2  {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -246,35 +247,35 @@ h3 {
   text-align: center;
   display: inline-block;
   padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  margin: 0 2rem 0 0;
+  border: 1.5px solid #ccc;
+  border-radius: 1.5rem;
+  margin: 0 3rem 0 0;
 }
 
 .emphasis {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-top: .75rem;
+  margin-top: 1.25rem;
 }
 
 .error {
-  margin-top: .5rem;
+  margin-top: .8rem;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #a31637;
-  border-radius: 1rem;
-  font-size: 1em;
+  border-radius: 1.5rem;
+  font-size: 1.5em;
   border: 0;
   font-weight: 500;
 }
 
 .alert {
-  margin-top: .5rem;
+  margin-top: .8rem;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #cbae89;
-  border-radius: 1rem;
-  font-size: 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
   border: 0;
   font-weight: 500;
 }
@@ -291,11 +292,11 @@ h3 {
 }
 
 .callout {
-  margin-bottom: -.5rem;
+  margin-bottom: -.8rem;
 }
 
 .about {
-  font-size: 1rem;
+  font-size: 1.5rem;
   width: 80%
 }
 
@@ -304,11 +305,11 @@ h3 {
 }
 
 .needy_list {
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .needy_list h4 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 0;
   border-bottom: solid 1px;
   padding-bottom: .25rem;
