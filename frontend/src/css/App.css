@@ -65,13 +65,13 @@ nav-links {
   display: block;
   /* margin: 2.5em auto 2em auto; */
   margin: 0 auto 0 auto;
-  padding: 3rem;
+  padding: 1.4rem;
 }
 
 nav a {
   text-decoration-line: none;
   color: #c9edf5;
-  margin: 0 1rem;
+  margin: 0 2rem 0 0;
 }
 
 nav a:hover {
