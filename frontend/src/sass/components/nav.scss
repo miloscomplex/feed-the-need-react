@@ -20,12 +20,12 @@ nav {
 
   & a {
     text-decoration-line: none;
-    color: #c9edf5;
+    color: $color-light-cyan;
     margin: 0 2rem 0 0;
   }
 
   & a:hover {
-    color: white;
+    color: $color-white;
   }
 
   & img {

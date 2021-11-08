@@ -4,7 +4,7 @@
   padding: 1.4rem;
 
   & a {
-    background-color: #267a77;
+    background-color: $color-marine-green;
     display: inline-block;
     padding: .6rem .8rem;
     margin: .25rem .25rem .25rem 0;
@@ -16,19 +16,19 @@
   }
 
   & a:hover {
-    background-color: #2e938f;
+    background-color: lighten($color-marine-green, 25%);
   }
 
-  & a.plain {
-    color: #267a77;
+  & a.cta__plain {
+    color: $color-marine-green;
     font-size: 1.5rem;
     background-color: white;
     padding: .6rem 0;
     margin: 0;
-  }
 
-  & a.plain:hover {
-    color: #9ad5c6;
+    &:hover {
+      color: lighten($color-marine-green, 25%);
+    }
   }
 
 }

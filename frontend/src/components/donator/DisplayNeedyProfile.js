@@ -5,7 +5,7 @@ function DisplayNeedyProfile() {
     <div id='content'>
       <h1> This is Needy.name</h1>
 
-      <p className='about'>
+      <p className='text__about'>
         Needy.profile goes here
       </p>
 
@@ -15,7 +15,7 @@ function DisplayNeedyProfile() {
         <li>Nothing at this time</li>
       </ul>
 
-      <Link to='/' className='plain'>Back To Your Profile</Link>
+      <Link to='/' className='cta__plain'>Back To Your Profile</Link>
     </div>
 
   )

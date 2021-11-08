@@ -8,7 +8,7 @@ function DonatorLanding() {
       <span>
         <strong>Your registered email is:</strong> donator.email
       </span>
-      <p className='bio'>
+      <p className='text__bio'>
         <strong>About You</strong> bio goes here
       </p>
 
@@ -28,7 +28,7 @@ function DonatorLanding() {
       </div>
 
       <p>
-        <Link className='plain' to=''>Delete Your Profile</Link>
+        <Link className='cta__plain' to=''>Delete Your Profile</Link>
       </p>
 
 

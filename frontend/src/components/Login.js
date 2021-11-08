@@ -18,8 +18,8 @@ function Login() {
 
         <label for='password'>Password:</label>
         <input type='text' onChange={e => setPassword(e.target.value)} />
-        
-        <input type='submit' value='submit' />
+
+        <input type='submit' value='submit' className='cta__btn' />
       </form>
     </login>
 

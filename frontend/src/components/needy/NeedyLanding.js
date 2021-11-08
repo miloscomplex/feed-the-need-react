@@ -5,7 +5,7 @@ function NeedyLanding() {
     <div id='content'>
       <h1>Hello [Needy.name]</h1>
       <h2>This is your personal home page</h2>
-      <p className='bio'>
+      <p className='text__bio'>
         <strong>Your Bio</strong> bio goes here
       </p>
 
@@ -26,7 +26,7 @@ function NeedyLanding() {
       </activity>
 
       <p>
-        <Link className='plain' to=''>Delete Your Profile</Link>
+        <Link className='cta__plain' to=''>Delete Your Profile</Link>
       </p>
 
 
