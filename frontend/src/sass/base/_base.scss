@@ -66,7 +66,7 @@ input {
   }
 
   &[type='submit']:hover {
-    background-color: $color-seafoam-green-hover;
+    background-color: lighten($color-marine-green, 15%);
   }
 
 }
