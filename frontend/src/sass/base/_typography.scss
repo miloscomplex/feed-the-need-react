@@ -16,6 +16,19 @@ nav {
   text-transform: uppercase;
 }
 
+#content a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: white;
+
+  &.cta__plain {
+    color: $color-marine-green;
+    font-size: 1.5rem;
+  }
+  
+}
+
 h1  {
   color: $color-burnt-orange;
   border-bottom: 1px solid;
