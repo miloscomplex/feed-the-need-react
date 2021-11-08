@@ -1,0 +1,34 @@
+nav {
+  background-color: #1e6694;
+  padding: 10rem 0;
+  background-image:
+    linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.601),
+    rgba(40, 180, 133, 0.608)),
+    url("../../images/alley_bw.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &-links {
+    width: 95%;
+    display: block;
+    /* margin: 2.5em auto 2em auto; */
+    margin: 0 auto 0 auto;
+    padding: 1.4rem;
+  }
+
+  & a {
+    text-decoration-line: none;
+    color: #c9edf5;
+    margin: 0 2rem 0 0;
+  }
+
+  & a:hover {
+    color: white;
+  }
+
+  & img {
+    opacity: 0.5;
+  }
+}

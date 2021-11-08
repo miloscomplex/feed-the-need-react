@@ -1,0 +1,21 @@
+.error {
+  margin-top: .8rem;
+  color: white;
+  padding: 1.5rem;
+  background-color: #a31637;
+  border-radius: 1.5rem;
+  font-size: 1.5em;
+  border: 0;
+  font-weight: 500;
+}
+
+.field_with_errors {
+  color: red;
+  display: inline-block;
+}
+
+.field_with_errors input {
+  border-color: red;
+  border-style: solid;
+  color: red;
+}

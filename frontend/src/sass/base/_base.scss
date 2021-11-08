@@ -15,3 +15,91 @@ body {
   background-color: #ffffff;
   box-sizing: border-box;
 }
+
+ul  {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 1px solid #999999;
+  padding: 1.5rem;
+  text-transform: capitalize;
+  margin-top: 0.8rem;
+  border-radius: 0.6rem;
+}
+
+li:hover {
+  background-color: #d9f0f5;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  border-style: none;
+  background-color: #ddd;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  margin: .5rem 0;
+  width: 20rem;
+}
+
+form label {
+  margin-top: 1.8rem;
+  display: block;
+  font-weight: 700;
+  color: #555;
+  font-size: 0.7em;
+}
+
+input[type='checkbox'] {
+  margin: auto .8rem auto 0;
+}
+
+input[type='submit'] {
+  background-color: #267a77;
+  display: inline-block;
+  padding: .6rem .8rem;
+  margin: 1.5rem .25rem .25rem 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+input[type='submit']:hover {
+  background-color: #2e938f;
+}
+
+textarea {
+  font-family: Roboto;
+  width: 20rem;
+  height: 8rem;
+  border-style: none;
+  background-color: #ddd;
+  padding: .8rem;
+  border-radius: 0.4rem;
+  margin: .5rem 0;
+}
+
+h1  {
+  color: #9f5c26;
+  border-bottom: 1px solid;
+  padding-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+h2  {
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-transform: uppercase;
+}
