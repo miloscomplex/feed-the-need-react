@@ -1,0 +1,17 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 100%; */
+  /* set to 16px for easy fix */
+  font-size: 62.5%;
+  /* makes 1 rem be 10px */
+}
+
+body {
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
