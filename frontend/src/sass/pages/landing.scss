@@ -1,0 +1,14 @@
+.landing {
+  &__cta-wrapper {
+    display: flex;
+    margin: 8rem 0;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__cta-div {
+    border: 1px solid #bbb;
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+  }
+}

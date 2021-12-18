@@ -10,9 +10,9 @@ function Login() {
   }
 
   return (
-    <login>
+    <login class='login'>
       <h2>Login for Donator & Needy</h2>
-      <form name='chatBoxForm' onSubmit={event => handleOnSubmit(event)} >
+      <form name='login__BoxForm' onSubmit={event => handleOnSubmit(event)} >
         <label for='name'>Name:</label>
         <input type='text' onChange={e => setName(e.target.value)} />
 
