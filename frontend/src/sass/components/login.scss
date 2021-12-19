@@ -1,6 +1,13 @@
 .login {
-  display: block;
+  display: flex;
   margin: 8rem 0;
   background-color: rgba($color-seafoam-green, .4);
   padding: 7rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+
+  &__wrapper {
+
+  }
 }

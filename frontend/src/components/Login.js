@@ -10,17 +10,19 @@ function Login() {
   }
 
   return (
-    <login class='login'>
-      <h2>Login for Donator & Needy</h2>
-      <form name='login__BoxForm' onSubmit={event => handleOnSubmit(event)} >
-        <label for='name'>Name:</label>
-        <input type='text' onChange={e => setName(e.target.value)} />
+    <login className='login'>
+      <div className='login__wrapper'>
+        <h2>Login for Donator & Needy</h2>
+        <form name='login__BoxForm' onSubmit={event => handleOnSubmit(event)} >
+          <label for='name'>Name:</label>
+          <input type='text' onChange={e => setName(e.target.value)} />
 
-        <label for='password'>Password:</label>
-        <input type='text' onChange={e => setPassword(e.target.value)} />
+          <label for='password'>Password:</label>
+          <input type='text' onChange={e => setPassword(e.target.value)} />
 
-        <input type='submit' value='submit' className='cta__btn' />
-      </form>
+          <input type='submit' value='submit' className='cta__btn' />
+        </form>
+      </div>
     </login>
 
   )
