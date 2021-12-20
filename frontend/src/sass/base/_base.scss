@@ -12,33 +12,8 @@ html {
 }
 
 body {
-  background-color: $color-white;
   box-sizing: border-box;
-}
-
-
-
-#content a {
-  background-color: $color-marine-green;
-  display: inline-block;
-  padding: 1rem 1.2rem;
-  margin: 2rem .25rem .25rem 0;
-  border-radius: 0.5rem;
-
-  &:hover {
-    background-color: lighten($color-marine-green, 15%);
-  }
-
-  &.cta__plain {
-    background-color: white;
-    padding: .6rem 0;
-    margin: 0;
-
-    &:hover {
-      color: lighten($color-marine-green, 25%);
-    }
-  }
-
+  background-color: $color-light-grey;
 }
 
 ul  {
@@ -54,6 +29,7 @@ li {
   text-transform: capitalize;
   margin-top: 0.8rem;
   border-radius: 0.6rem;
+  transition: all .3s;
 
   &:hover {
     background-color: $color-ultra-light-cyan;
@@ -88,6 +64,7 @@ input {
     border: none;
     cursor: pointer;
     width: auto;
+    transition: all .3s;
   }
 
   &[type='submit']:hover {
