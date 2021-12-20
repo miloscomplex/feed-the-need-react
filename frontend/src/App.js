@@ -1,5 +1,6 @@
 import './sass/App.scss';
 import Nav from './UI/Nav';
+import Header from './UI/Header'
 import Footer from './UI/Footer'
 import Landing from './components/Landing'
 import NeedyLanding from './components/needy/NeedyLanding'
@@ -14,7 +15,7 @@ function App() {
   return (
     <Router basename='feed-the-need'>
       <div className='App'>
-        <Nav />
+        <Header />
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/needy' component={NeedyLanding} />

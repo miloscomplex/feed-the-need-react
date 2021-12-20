@@ -1,0 +1,12 @@
+.header {
+  background-color: #1e6694;
+  height: 22vh;
+  background-image:
+    linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.601),
+    rgba(40, 180, 133, 0.608)),
+    url("../../images/alley_bw.jpg");
+  background-position: center;
+  background-size: cover;
+}
