@@ -13,6 +13,10 @@ nav {
     padding: 1.4rem;
   }
 
+  &__login {
+    display: flex;
+  }
+
   &:hover {
     background-color: rgba(0,0,0, .8);
   }
@@ -30,4 +34,17 @@ nav {
   & img {
     opacity: 0.5;
   }
+}
+
+.nav__login {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem 0 2rem;
+
+  &__div {
+    margin-right: 1rem;
+    font-size: 2rem;
+
+  }
+
 }

@@ -10,6 +10,7 @@ function Nav() {
         <Link to='/sign-up'>Sign Up</Link>
       </nav-links>
       <login className='nav__login'>
+        <div className='nav__login__div icon-basic-case'></div>
         <Link to=''>Log In</Link>
       </login>
     </nav>
