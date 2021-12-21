@@ -9,6 +9,9 @@ function Nav() {
         <Link to=''>Log In</Link>
         <Link to='/sign-up'>Sign Up</Link>
       </nav-links>
+      <login className='nav__login'>
+        <Link to=''>Log In</Link>
+      </login>
     </nav>
   )
 }
