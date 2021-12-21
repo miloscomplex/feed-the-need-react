@@ -1,0 +1,64 @@
+Person
+  ID
+  name
+  company ID
+
+Company
+  ID
+  name
+
+Person SELECT Name --> Company give me the the name of the company by Person ---> Comany ID
+-- display the name
+
+/Persons/companies
+
+
+def name_company
+  get the names and organize by company.id
+  display the company.name by person.company.id
+end
+
+// movie review system
+// select a movie give a score and give a comment
+
+User
+  Id
+  name
+  email
+
+Movie
+  id
+  name
+
+
+Review
+  user
+  movie
+  score
+  comment
+
+
+// movieObj | all-review
+// return avg score for passed in movie
+
+function showAvgScore (movieObj, all-review) {
+  let array = [];
+  let sum = 0;
+  let counter = 0;
+  let avgScore;
+
+  for (let i=0; i< all-review.length; i++) {
+      if (movieObj === all-review[i].movie) {
+        sum += all-review[i].score;
+        counter++;
+      }
+  }
+
+  avgScore = sum / counter;
+
+
+
+
+
+  return avgScore;
+}

@@ -4,7 +4,6 @@ import Login from './Login'
 function Landing() {
   return (
     <div id='content' class='landing'>
-      <h1 class='landing__header'>Welcome to Feed The Need</h1>
       <p class="text__emphasis, landing__text">We, as a society, are more and more becoming cashless and dependent upon electronic transactions. A shortfall of this situation is that people in need are deprived; more frequently, people no longer have those couple of dollars or loose change in their purse or pocket to help them out.
       </p>
       <div class='landing__cta-wrapper'>
