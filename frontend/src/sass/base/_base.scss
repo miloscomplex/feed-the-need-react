@@ -47,8 +47,6 @@ input, textarea {
   margin: .5rem 0;
   width: 100%;
 
-  &[type='field']
-
   &[type='checkbox'] {
     margin: auto .8rem auto 0;
   }
@@ -60,7 +58,7 @@ input, textarea {
     margin: 1.5rem .25rem .25rem 0;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: white;
     border-radius: 0.5rem;
     border: none;
@@ -80,14 +78,14 @@ form label {
   display: block;
   font-weight: 700;
   color: $color-middle-grey;
-  font-size: 0.7em;
+  font-size: 2rem;
 }
 
 
 textarea {
   font-family: Roboto;
-  width: 20rem;
-  height: 8rem;
+  // width: 20rem;
+  height: 16rem;
   border-style: none;
   background-color: $color-light-grey;
   padding: .8rem;

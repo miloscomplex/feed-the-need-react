@@ -8,11 +8,11 @@ function Landing() {
       </p>
       <div class='landing__cta-wrapper'>
         <div class='landing__cta-div'>
-          <subhead>Do you need help?</subhead>
+          <subhead class='landing__cta-div__header'>Do you need help?</subhead>
           <Link to='/sign-up'>Sign-up</Link>
         </div>
         <div class='landing__cta-div'>
-          <subhead>Do you want to help?</subhead>
+          <subhead class='landing__cta-div__header'>Do you want to help?</subhead>
           <Link to='/sign-up'>Sign-up</Link>
         </div>
       </div>
