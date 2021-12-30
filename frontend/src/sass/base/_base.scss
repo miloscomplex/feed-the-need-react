@@ -37,7 +37,7 @@ li {
 
 }
 
-input {
+input, textarea {
   font-family: inherit;
   display: block;
   border-style: none;
@@ -46,6 +46,8 @@ input {
   border-radius: 0.2rem;
   margin: .5rem 0;
   width: 100%;
+
+  &[type='field']
 
   &[type='checkbox'] {
     margin: auto .8rem auto 0;
