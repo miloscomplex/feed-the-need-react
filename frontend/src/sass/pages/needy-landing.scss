@@ -1,0 +1,13 @@
+.needy-landing {
+
+  &__bio {
+    background-color: $color-ultra-light-cyan;
+    padding: 4rem;
+  }
+  &__bio-img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 800px;
+    background-color: $color-light-grey;
+  }
+}

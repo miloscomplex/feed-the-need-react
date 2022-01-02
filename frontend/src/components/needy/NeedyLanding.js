@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom'
 function NeedyLanding() {
   return (
     <div id='content' className='needy-landing'>
-      <h1 className='needy-landing__h1'>
-        Hello [Needy.name]
-      </h1>
-      <h2>This is your personal home page</h2>
-      <p className='text__bio'>
-        <strong>Your Bio</strong> bio goes here
-      </p>
+      <div className='needy-landing__bio'>
+        <h1 className='needy-landing__h1'>
+          Hello [Needy.name] This is your personal home page.
+        </h1>
+        <div className='needy-landing__bio-img'> </div>
+        <p className='text__bio'>
+          <strong>Your Bio</strong> bio goes here
+        </p>
 
-      <Link to='' className='needy-landing__btn'>Edit your profile</Link>
+        <Link to='' className='needy-landing__btn'>Edit your profile</Link>
+      </div>
 
       <h2>Your List Of Needs</h2>
       <ul className='needy-landing__ul'>
