@@ -6,12 +6,12 @@ function Nav() {
     <nav className='nav'>
       <nav-links className='nav__links'>
         <Link to='/'>Home</Link>
-        <Link to=''>Log In</Link>
+        <Link to='/login'>Log In</Link>
         <Link to='/sign-up'>Sign Up</Link>
       </nav-links>
       <login className='nav__login'>
         <div className='nav__login__div icon-basic-case'></div>
-        <Link to=''>Log In</Link>
+        <Link to='/needy/'>Log In</Link>
       </login>
     </nav>
   )

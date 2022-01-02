@@ -2,21 +2,28 @@ import { Link } from 'react-router-dom'
 
 function NeedyLanding() {
   return (
-    <div id='content'>
-      <h1>Hello [Needy.name]</h1>
+    <div id='content' className='needy-landing'>
+      <h1 className='needy-landing__h1'>
+        Hello [Needy.name]
+      </h1>
       <h2>This is your personal home page</h2>
       <p className='text__bio'>
         <strong>Your Bio</strong> bio goes here
       </p>
 
-      <Link to=''>Edit your profile</Link>
+      <Link to='' className='needy-landing__btn'>Edit your profile</Link>
 
       <h2>Your List Of Needs</h2>
-      <ul>
+      <ul className='needy-landing__ul'>
+        <li>List of needs goes here</li>
+        <li>List of needs goes here</li>
+        <li>List of needs goes here</li>
+        <li>List of needs goes here</li>
+        <li>List of needs goes here</li>
         <li>List of needs goes here</li>
       </ul>
 
-      <Link to=''>Edit Your List of Needs</Link>
+      <Link to='' className='needy-landing__btn'>Edit Your List of Needs</Link>
 
       <activity>
         <h2>Recently donated items</h2>
