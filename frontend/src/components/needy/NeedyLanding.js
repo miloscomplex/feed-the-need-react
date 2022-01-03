@@ -13,17 +13,19 @@ function NeedyLanding() {
           </div>
           <div className='needy-landing__bio-text-div'>
 
-            <p className='text__bio needy-landing__bio-p'>
-              <label className='needy-landing__bio-label'>Name</label> Tom White
-            </p>
+            <div className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Name</label> <p>Tom White</p>
+            </div>
 
-            <p className='text__bio needy-landing__bio-p'>
-              <label className='needy-landing__bio-label'>Favorite Color</label> Light Blue
-            </p>
+            <div className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Favorite Color</label>
+              <p>Light Blue</p>
+            </div>
 
-            <p className='text__bio needy-landing__bio-p'>
-              <label className='needy-landing__bio-label'>Home town</label> Chicago, IL
-            </p>
+            <div className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Home town</label>
+              <p>Chicago, IL</p>
+            </div>
           </div>
           <div className='needy-landing__bio-div'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere elementum hendrerit. Vivamus orci turpis, auctor nec felis quis, scelerisque viverra ante. Curabitur non massa dapibus, laoreet justo a, mollis odio. Pellentesque ligula dui, molestie et risus eget, dictum ultrices turpis. Quisque sit amet ultrices eros. Suspendisse potenti.</div>
         </div>

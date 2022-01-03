@@ -29,7 +29,14 @@
     }
 
     &-p {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      display: inline-block;
+      line-height: 1.8rem;
+
     }
 
     &-label {
@@ -38,8 +45,10 @@
       text-transform: uppercase;
       background-color: $color-dark-grey;
       display: inline-block;
-      padding: 1rem 1.2rem;
-      border-radius: 17777rem;
+      padding: .8rem 1rem;
+      border-radius: 177rem;
+      margin-right: .5rem;
+
     }
 
     &-btn {
