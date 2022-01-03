@@ -2,6 +2,7 @@
 
   &__div {
     display: flex;
+
     align-content: center;
   }
 
@@ -10,17 +11,21 @@
     padding: 4rem;
 
     &-img {
-      height: 15rem;
-      width: 15rem;
-      margin-right: 1rem;
-      border-radius: 800px;
-      background-color: $color-dark-grey;
+      & div {
+        height: 15rem;
+        width: 15rem;
+        margin-right: 1rem;
+        border-radius: 800px;
+        background-color: $color-dark-grey;
+      }
+
     }
 
     &-text-div {
-      width:40%;
-      display: flex;
-      flex-direction: column;
+      flex-shrink: 0;
+      width: 28rem;
+      // display: flex;
+      // flex-direction: column;
     }
 
     &-p {
@@ -28,7 +33,7 @@
     }
 
     &-label {
-      color: $color-ultra-light-cyan;
+      color: $color-white;
       font-size: 1.2rem;
       text-transform: uppercase;
       background-color: $color-dark-grey;

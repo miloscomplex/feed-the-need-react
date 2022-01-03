@@ -8,7 +8,9 @@ function NeedyLanding() {
           Hello Tom
         </h1>
         <div className='needy-landing__div'>
-          <div className='needy-landing__bio-img'> </div>
+          <div className='needy-landing__bio-img'>
+            <div> </div>
+          </div>
           <div className='needy-landing__bio-text-div'>
 
             <p className='text__bio needy-landing__bio-p'>
@@ -22,8 +24,8 @@ function NeedyLanding() {
             <p className='text__bio needy-landing__bio-p'>
               <label className='needy-landing__bio-label'>Home town</label> Chicago, IL
             </p>
-
           </div>
+          <div className='needy-landing__bio-div'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere elementum hendrerit. Vivamus orci turpis, auctor nec felis quis, scelerisque viverra ante. Curabitur non massa dapibus, laoreet justo a, mollis odio. Pellentesque ligula dui, molestie et risus eget, dictum ultrices turpis. Quisque sit amet ultrices eros. Suspendisse potenti.</div>
         </div>
         <Link to='' className='needy-landing__bio-btn'>Edit your profile</Link>
       </div>
