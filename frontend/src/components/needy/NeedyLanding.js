@@ -5,14 +5,27 @@ function NeedyLanding() {
     <div id='content' className='needy-landing'>
       <div className='needy-landing__bio'>
         <h1 className='needy-landing__h1'>
-          Hello [Needy.name] This is your personal home page.
+          Hello Tom
         </h1>
-        <div className='needy-landing__bio-img'> </div>
-        <p className='text__bio'>
-          <strong>Your Bio</strong> bio goes here
-        </p>
+        <div className='needy-landing__div'>
+          <div className='needy-landing__bio-img'> </div>
+          <div className='needy-landing__bio-text-div'>
 
-        <Link to='' className='needy-landing__btn'>Edit your profile</Link>
+            <p className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Name</label> Tom White
+            </p>
+
+            <p className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Favorite Color</label> Light Blue
+            </p>
+
+            <p className='text__bio needy-landing__bio-p'>
+              <label className='needy-landing__bio-label'>Home town</label> Chicago, IL
+            </p>
+
+          </div>
+        </div>
+        <Link to='' className='needy-landing__bio-btn'>Edit your profile</Link>
       </div>
 
       <h2>Your List Of Needs</h2>

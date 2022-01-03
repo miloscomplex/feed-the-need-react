@@ -1,13 +1,46 @@
 .needy-landing {
 
+  &__div {
+    display: flex;
+    align-content: center;
+  }
+
   &__bio {
     background-color: $color-ultra-light-cyan;
     padding: 4rem;
-  }
-  &__bio-img {
-    height: 10rem;
-    width: 10rem;
-    border-radius: 800px;
-    background-color: $color-light-grey;
+
+    &-img {
+      height: 15rem;
+      width: 15rem;
+      margin-right: 1rem;
+      border-radius: 800px;
+      background-color: $color-dark-grey;
+    }
+
+    &-text-div {
+      width:40%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-p {
+      margin-bottom: 2rem;
+    }
+
+    &-label {
+      color: $color-ultra-light-cyan;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      background-color: $color-dark-grey;
+      display: inline-block;
+      padding: 1rem 1.2rem;
+      border-radius: 17777rem;
+    }
+
+    &-btn {
+      display: block;
+    }
+
+
   }
 }
