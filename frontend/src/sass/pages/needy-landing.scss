@@ -31,11 +31,13 @@
     &-p {
       margin-bottom: 2.5rem;
       font-weight: 600;
+      position: relative;
     }
 
     p {
       display: inline-block;
-      
+      position: absolute;
+      top: .4rem;
     }
 
     &-label {
