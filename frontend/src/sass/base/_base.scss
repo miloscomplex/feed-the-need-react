@@ -66,6 +66,9 @@ input, textarea {
     cursor: pointer;
     width: auto;
     transition: all .3s;
+    @include respond(phone) {
+      min-width: 100%;
+    }
   }
 
   &[type='submit']:hover {

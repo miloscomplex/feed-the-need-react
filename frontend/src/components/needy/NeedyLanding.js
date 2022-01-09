@@ -46,7 +46,10 @@ function NeedyLanding() {
 
       <activity>
         <h2>Recently donated items</h2>
-        <ul>
+        <ul className='needy-landing__donated'>
+          <li>No Items have been donated</li>
+          <li>No Items have been donated</li>
+          <li>No Items have been donated</li>
           <li>No Items have been donated</li>
         </ul>
       </activity>

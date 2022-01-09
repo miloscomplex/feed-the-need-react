@@ -13,7 +13,7 @@
 
     &-div {
       width: 55%;
-    
+
       @include respond(tab-land) {
         width: 100%;
       }
@@ -63,6 +63,39 @@
 
     &-btn {
       display: block;
+    }
+
+
+  }
+
+  &__ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    & li {
+      min-width: 33.333%;
+
+      @include respond(tab-port) {
+        min-width: 50%;
+      }
+
+      @include respond(phone) {
+        min-width: 100%;
+      }
+
+    }
+  }
+
+  &__donated {
+    display: flex;
+    flex-wrap: wrap;
+
+    & li {
+      min-width: 50%;
+
+      @include respond(tab-port) {
+        min-width: 100%;
+      }
     }
 
 

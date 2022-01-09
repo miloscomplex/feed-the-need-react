@@ -26,5 +26,11 @@
         color: lighten($color-marine-green, 25%);
       }
     }
+
+    @include respond(phone) {
+      min-width: 100%;
+      text-align: center;
+    }
   }
+
 }
