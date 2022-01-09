@@ -6,7 +6,7 @@ function Header() {
     <header className='header'>
       <Nav />
       <h1 class='header__landing-header'>
-        <div class='header__landing-header__eyebrow'>Welcome to</div> Feed The Need
+        <div class='header__landing-header__eyebrow'>Welcome to</div>Feed The Need
       </h1>
     </header>
   )

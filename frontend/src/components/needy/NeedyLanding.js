@@ -4,9 +4,6 @@ function NeedyLanding() {
   return (
     <div id='content' className='needy-landing'>
       <div className='needy-landing__bio'>
-        <h1 className='needy-landing__h1'>
-          Hello Tom
-        </h1>
         <div className='needy-landing__div'>
           <div className='needy-landing__bio-img'>
             <div> </div>
@@ -32,19 +29,20 @@ function NeedyLanding() {
         <Link to='' className='needy-landing__bio-btn'>Edit your profile</Link>
       </div>
 
-      <h2>Your List Of Needs</h2>
-      <ul className='needy-landing__ul'>
-        <li>List of needs goes here</li>
-        <li>List of needs goes here</li>
-        <li>List of needs goes here</li>
-        <li>List of needs goes here</li>
-        <li>List of needs goes here</li>
-        <li>List of needs goes here</li>
-      </ul>
+      <div className='needy-landing__needs-div'>
+        <h2 className='space-above'>Your List Of Needs</h2>
+        <ul className='needy-landing__needs-div__ul'>
+          <li>List of needs goes here</li>
+          <li>List of needs goes here</li>
+          <li>List of needs goes here</li>
+          <li>List of needs goes here</li>
+          <li>List of needs goes here</li>
+          <li>List of needs goes here</li>
+        </ul>
+        <Link to='' className='needy-landing__btn'>Edit Your List of Needs</Link>
+      </div>
 
-      <Link to='' className='needy-landing__btn'>Edit Your List of Needs</Link>
-
-      <activity>
+      <activity className='space-above'>
         <h2>Recently donated items</h2>
         <ul className='needy-landing__donated'>
           <li>No Items have been donated</li>

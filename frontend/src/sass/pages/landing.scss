@@ -54,12 +54,23 @@
 .header {
   position: relative;
 
+  @keyframes fade-in {
+    0% {
+      transform: rgba($color-header, 0);
+    }
+    100% {
+      transform: rgba($color-header, 1);
+    }
+  }
+
+  animation: 4s ease-out fade-in;
+
   &__landing-header {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    font-size: 10rem;
-    line-height: 8rem;
+    font-size: 14rem;
+    line-height: 11rem;
     color: $color-white;
     // padding: 10rem;
     // border-bottom: 1px solid var(--color-light-grey);
@@ -71,7 +82,7 @@
     width: 100%;
 
     &__eyebrow {
-      font-size: 3rem;
+      font-size: 5rem;
       line-height: normal;
     }
 
