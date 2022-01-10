@@ -7,6 +7,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include respond(phone) {
+    padding: 1rem;
+  }
+
   & a {
     background-color: $color-marine-green;
     display: inline-block;

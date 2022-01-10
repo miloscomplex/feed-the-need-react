@@ -2,7 +2,7 @@
   &__cta-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 8rem 0;
+    margin: 8rem auto;
     align-items: center;
     justify-content: space-around;
     position: relative;
@@ -14,7 +14,8 @@
     padding: 5rem 6rem;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
     text-align: center;
-    width: 36%;
+    width: 45%;
+    min-width: 30rem;
 
     @include respond(tab-port) {
       width: 100%;

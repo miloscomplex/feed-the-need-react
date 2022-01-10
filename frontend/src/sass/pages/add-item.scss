@@ -1,0 +1,24 @@
+.add-item {
+  justify-content: space-around;
+  h2 {
+    padding: 0 15rem;
+  }
+
+  @include respond(tab-port) {
+    text-align: center;
+
+    h2 {
+    min-width: 100%;
+    padding: 0 9rem;
+    }
+  }
+
+  @include respond(phone) {
+    h2 {
+      padding: 0 2rem;
+    }
+
+  }
+
+
+}
