@@ -7,6 +7,16 @@
     }
 }
 
+// @keyframes fade-in {
+//   0% {
+//     background-color: lighen($color-header, 30%);
+//   }
+//   100% {
+//     background-color: rgba($color-header, 1);
+//   }
+// }
+
+
 @mixin respond($breakpoint) {
 
     @if $breakpoint == phone {

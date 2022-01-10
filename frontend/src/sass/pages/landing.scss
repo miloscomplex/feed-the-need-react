@@ -55,17 +55,6 @@
 .header {
   position: relative;
 
-  @keyframes fade-in {
-    0% {
-      transform: rgba($color-header, 0);
-    }
-    100% {
-      transform: rgba($color-header, 1);
-    }
-  }
-
-  animation: 4s ease-out fade-in;
-
   &__landing-header {
     text-align: center;
     text-transform: uppercase;
@@ -85,6 +74,27 @@
     &__eyebrow {
       font-size: 5rem;
       line-height: normal;
+    }
+
+    @include respond(tab-port) {
+      font-size: 10rem;
+      line-height: 8rem;
+
+      &__eyebrow {
+        font-size: 4rem;
+        line-height: normal;
+      }
+    }
+
+    @include respond(phone) {
+
+      &__eyebrow {
+        font-size: 3rem;
+        line-height: normal;
+      }
+      font-size: 6.2rem;
+      line-height: 5rem;
+      bottom: -0.6rem;
     }
 
   }
