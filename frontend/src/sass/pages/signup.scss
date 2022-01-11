@@ -1,8 +1,15 @@
 
 .signup {
 
+  &__div {
+    width: 40%;
+    margin: 0 auto;
+  }
+
   &__form {
-    max-width: 60rem;
+    // & > input {
+    //   width: 100%;
+    // }
     margin: 0 auto;
   }
 

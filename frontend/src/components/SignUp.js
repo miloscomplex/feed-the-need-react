@@ -15,25 +15,27 @@ function SignUp() {
 
   return (
     <div id='content' class='signup'>
-      <h1>Sign Up Below</h1>
-      <form name='signUpForm' class="signup__form" onSubmit={ e => handleOnSubmit(e)} >
-        <label for='name'>Name:</label>
-        <input type='text' name='name' onChange={e => setName(e.target.value)} />
+      <div class='signup__div'>
+        <h1>Sign Up Below</h1>
+        <form name='signUpForm' class="signup__form" onSubmit={ e => handleOnSubmit(e)} >
+          <label for='name'>Name:</label>
+          <input type='text' name='name' onChange={e => setName(e.target.value)} />
 
-        <label for='email'>Email:</label>
-        <input type='text' name='email' onChange={e => setEmail(e.target.value)} />
+          <label for='email'>Email:</label>
+          <input type='text' name='email' onChange={e => setEmail(e.target.value)} />
 
-        <label for='about'>About:</label>
-        <textarea name='about' onChange={e => setAbout(e.target.value)} />
+          <label for='about'>About:</label>
+          <textarea name='about' onChange={e => setAbout(e.target.value)} />
 
-        <label for='password'>Password:</label>
-        <input type='text' name='password' onChange={e => setPassword(e.target.value)} />
+          <label for='password'>Password:</label>
+          <input type='text' name='password' onChange={e => setPassword(e.target.value)} />
 
-        <label for='password-confirm'>Password Confirmation</label>
-        <input type='text' name='password-confirm' onChange={e => setPasswordConfirm(e.target.value)} />
+          <label for='password-confirm'>Password Confirmation</label>
+          <input type='text' name='password-confirm' onChange={e => setPasswordConfirm(e.target.value)} />
 
-        <input type='submit' value='submit' />
-      </form>
+          <input type='submit' value='submit' />
+        </form>
+      </div>
     </div>
   )
 }

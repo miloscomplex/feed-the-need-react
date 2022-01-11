@@ -26,7 +26,7 @@ function NeedyLanding() {
           </div>
           <div className='needy-landing__bio-div'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere elementum hendrerit. Vivamus orci turpis, auctor nec felis quis, scelerisque viverra ante. Curabitur non massa dapibus, laoreet justo a, mollis odio. Pellentesque ligula dui, molestie et risus eget, dictum ultrices turpis. Quisque sit amet ultrices eros. Suspendisse potenti.</div>
         </div>
-        <Link to='' className='needy-landing__bio-btn'>Edit your profile</Link>
+        <Link to='add-item' className='needy-landing__bio-btn'>Edit your profile</Link>
       </div>
 
       <div className='needy-landing__needs-div'>
@@ -39,7 +39,7 @@ function NeedyLanding() {
           <li>List of needs goes here</li>
           <li>List of needs goes here</li>
         </ul>
-        <Link to='' className='needy-landing__btn'>Edit Your List of Needs</Link>
+        <Link to='add-item' className='needy-landing__btn'>Edit Your List of Needs</Link>
       </div>
 
       <activity className='space-above'>
