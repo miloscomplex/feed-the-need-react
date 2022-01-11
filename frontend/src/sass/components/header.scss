@@ -9,4 +9,13 @@
     url("../../images/alley_bw.jpg");
   background-position: center;
   background-size: cover;
+
+  &-needy {
+    background-image:
+      linear-gradient(
+      to right bottom,
+      rgba($color-burnt-orange, 0.601),
+      rgba($color-grey-blue, 0.608)),
+      url("../../images/alley_bw.jpg");
+  }
 }
