@@ -10,4 +10,18 @@ class ItemsController < ApplicationController
     render json: item
   end
 
+  def new
+    item = Item.new
+    render json: item
+  end
+
+  def create
+    item = Item.new(item_params)
+    if item.save
+      render json: item
+    else
+      render json: { errors: item.errors }, status: 422
+    end
+  end
+
 end
