@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_025900) do
     t.string "name"
     t.integer "qty"
     t.string "category"
+    t.boolean "donated"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
