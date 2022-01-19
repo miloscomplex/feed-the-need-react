@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def update
-  user.update(user_params)
-  redirect_to donator_path(@donator)
+    user.update(user_params)
+    render json: user
   end
 
 
@@ -39,10 +39,9 @@ class UsersController < ApplicationController
 
   def set_user
   if current_user != User.find_by(id: params[:id])
-    flash[:error] = "Uh oh, something went wrong"
-    redirect_to login_path
+    render json: { error: 'Uh oh, something went wrong'}
   else
-    @donator = Donator.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
 end

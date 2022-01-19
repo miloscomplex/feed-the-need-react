@@ -35,7 +35,8 @@ class SessionsController < ApplicationController
 
   def logout
     logout!
-    redirect_to root_path
+    # JWT prob goes here 
+    render json: { session: 'clear' }
   end
 
 end
