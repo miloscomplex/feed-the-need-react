@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   # Returns the current logged-in user (if any).
   def current_user
-      current_user ||= Donator.find_by(id: session[:user_id])
+      current_user ||= User.find_by(id: session[:user_id])
   end
 
   # Returns true if the user is logged in, false otherwise.
@@ -27,11 +27,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      session[:user_type] = :donator
-      redirect_to donator_path(@donator)
+      render json: user
     else
-      flash[:error] = "Incorrect Password or Username"
-      redirect_to login_path
+      render json: { errors: user.errors }, status: 422
     end
   end
 
