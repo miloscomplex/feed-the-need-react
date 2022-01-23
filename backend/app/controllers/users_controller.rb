@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       render json: user
     else
-      render json: { errors: user.errors }. status: 422
+      render json: { errors: user.errors }, status: 422
     end
   end
 
