@@ -4,7 +4,6 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :qty
       t.string :category
-      t.boolean :donated
       t.timestamps
     end
 

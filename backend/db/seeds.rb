@@ -14,3 +14,5 @@ Item.create(user_id: 2, name: 'coat', qty: 1, category: 'clothing')
 Item.create(user_id: 1, name: 'sleeping bag', qty: 1, category: 'essentials')
 Item.create(user_id: 1, name: 'shoes', qty: 2, category: 'clothing')
 Item.create(user_id: 2, name: 'gallon of water', qty: 4, category: 'clothing')
+
+puts "database has been seeded successfully"
