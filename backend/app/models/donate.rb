@@ -1,2 +1,3 @@
 class Donate < ApplicationRecord
+  
 end
