@@ -23,6 +23,11 @@ class SessionsController < ApplicationController
 
   #### END HELPER METHODS
 
+
+  def login
+    render json: logged_in?
+  end
+
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
@@ -35,7 +40,7 @@ class SessionsController < ApplicationController
 
   def logout
     logout!
-    # JWT prob goes here 
+    # JWT prob goes here
     render json: { session: 'clear' }
   end
 

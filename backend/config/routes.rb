@@ -4,11 +4,16 @@ Rails.application.routes.draw do
   resources :items
   resources :donates
 
-  root 'welcome#index'
+  # root 'welcome#index'
 
-  get '/login', to: 'sessions/sessions#login', as: 'login'
-  post '/login', to: 'sessions/sessions#create'
 
-  get '/logout', to: 'sessions/sessions#logout', as: 'logout'
+  get '/login', to: 'sessions#login', as: 'login'
+  post '/login', to: 'sessions#create'
+
+  get '/logout', to: 'sessions#logout', as: 'logout'
+
+  root :to => redirect('/login')
+
+
 
 end
