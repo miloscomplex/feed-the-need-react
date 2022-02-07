@@ -1,4 +1,6 @@
 import './sass/App.scss';
+import { API_ROOT, HEADERS } from './constants'
+import React, { useState, useEffect } from 'react';
 import Nav from './UI/Nav';
 import Header from './UI/Header'
 import Footer from './UI/Footer'
@@ -14,6 +16,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 function App() {
+
+  const [user, setUser] = useState()
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      fetch(`${API_ROOT}/login`, {
+        headers: {'Authenticate': localStorage.token}
+      })
+      .then(resp => resp.json())
+      .then(user => {
+        setUser(user)
+      })
+    }
+  })
+
+  const handleLogout = () => {
+    setUser({})
+    localStorage.removeItem('token')
+  }
+
   return (
     <Router basename='feed-the-need'>
       <div className='App'>

@@ -3,10 +3,13 @@ import { API_ROOT, HEADERS } from '../constants'
 
 function Login() {
 
+
   const [inputField, setInputField] = useState({
     email: '',
     password: ''
   })
+
+  const [user, setUser] = useState()
 
   const inputsHandler = (e) => {
     console.log(e.target)
@@ -15,17 +18,18 @@ function Login() {
 
   function handleOnSubmit(event) {
     event.preventDefault()
+
     fetch(`${API_ROOT}/login`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify(inputField)
+    }).then(resp => resp.json())
+    .then(data => {
+      localStorage.setItem('token', data.token)
+      // remember data is {token: token, user: user}
+      setUser(data.user)
     })
-
-
-    setInputField({ email: '', password: '' })
-
   }
-
 
   return (
     <div className='login'>
