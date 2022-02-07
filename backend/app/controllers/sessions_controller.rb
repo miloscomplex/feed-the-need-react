@@ -30,9 +30,17 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       payload = {user_id: user.id}
       token = encode(payload)
-      render :json => { user: user, token: token}
+      render :json => { user: user, token: token, sucess: "Welcome back, #{{user.name}}"}
     else
-      render json {error: "user not found"}
+      render json {failure: "Log in failed! Username or password invalid."}
+    end
+  end
+
+  def auto_login
+    if session_user
+      render json: session_user
+    else
+      render json: { errors: "No User Logged In"}
     end
   end
 
@@ -40,17 +48,6 @@ class SessionsController < ApplicationController
     token = request.headers["Authenticate"]
     user = User.find(decode(token)["user_id"])
     render json: user
-  end
-
-
-  def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: user
-    else
-      render json: { errors: user.errors }, status: 422
-    end
   end
 
   def logout

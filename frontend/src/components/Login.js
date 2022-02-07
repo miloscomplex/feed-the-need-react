@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import { API_ROOT, HEADERS } from '../constants'
 
-function Login() {
+function Login(props) {
 
 
-  const [inputField, setInputField] = useState({
-    email: '',
-    password: ''
-  })
-
-  const [user, setUser] = useState()
-
-  const inputsHandler = (e) => {
-    console.log(e.target)
-    setInputField( {[e.target.name]: e.target.value} )
-  }
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   function handleOnSubmit(event) {
     event.preventDefault()
@@ -22,12 +13,14 @@ function Login() {
     fetch(`${API_ROOT}/login`, {
       method: 'POST',
       headers: HEADERS,
-      body: JSON.stringify(inputField)
+      body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
       localStorage.setItem('token', data.token)
+      props.handleLogin(data.user)
+      // send to App Component State
       // remember data is {token: token, user: user}
-      setUser(data.user)
+      // setUser(data.user)
     })
   }
 
@@ -40,16 +33,15 @@ function Login() {
           <label for='email'>Email:</label>
           <input type='text'
             name='email'
-            onChange={inputsHandler}
-            value={inputField.email}
+            onChange={ ev => {setEmail(ev.target.value)}}
+            value={email.email}
           />
 
           <label for='password'>Password:</label>
           <input type='text'
             name='password'
-            onChange={inputsHandler}
-            value={inputField.password}
-
+            onChange={ ev => {setPassword(ev.target.value)}}
+            value={email.password}
           />
 
           <input
