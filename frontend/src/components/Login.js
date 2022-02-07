@@ -15,7 +15,7 @@ function Login() {
 
   function handleOnSubmit(event) {
     event.preventDefault()
-    fetch(`${API_ROOT}/users`, {
+    fetch(`${API_ROOT}/login`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify(inputField)

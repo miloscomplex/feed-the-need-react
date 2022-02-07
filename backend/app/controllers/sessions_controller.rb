@@ -25,8 +25,23 @@ class SessionsController < ApplicationController
 
 
   def login
-    render json: logged_in?
+    user = User.find_by(email: params[:email])
+
+    if user && user.authenticate(params[:password])
+      payload = {user_id: user.id}
+      token = encode(payload)
+      render :json => { user: user, token: token}
+    else
+      render json {error: "user not found"}
+    end
   end
+
+  def token_authenticate
+    token = request.headers["Authenticate"]
+    user = User.find(decode(token)["user_id"])
+    render json: user
+  end
+
 
   def create
     user = User.find_by(email: params[:email])
