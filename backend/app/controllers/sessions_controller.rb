@@ -17,16 +17,11 @@ class SessionsController < ApplicationController
     session.clear
   end
 
-  def which_user?
-    session[:user_type]
-  end
-
   #### END HELPER METHODS
 
 
   def login
     user = User.find_by(email: params[:email])
-
     if user && user.authenticate(params[:password])
       payload = {user_id: user.id}
       token = encode(payload)
