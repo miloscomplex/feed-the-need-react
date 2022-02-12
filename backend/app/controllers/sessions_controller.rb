@@ -1,8 +1,14 @@
 class SessionsController < ApplicationController
 
 
+  def new
+    # session_user ||= User.find_by(id: session[:user_id])
+    render :json => {getLogin: "#{session_user} = session user"}
+  end
 
-  def login
+
+
+  def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       payload = {user_id: user.id}
@@ -31,6 +37,12 @@ class SessionsController < ApplicationController
     logout!
     # JWT prob goes here
     render json: { session: 'clear' }
+  end
+
+  private
+
+  def sessions_params
+    params.permit(:name, :email, :bio, :password, :password_confirmation)
   end
 
 end

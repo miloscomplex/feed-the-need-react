@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
 
-  post '/login', to: 'sessions#login', as: 'postlogin'
+  post '/login', to: 'sessions#create', as: 'login'
 
-  get '/login', to: 'sessions#session_user', as: 'login'
+  get '/login', to: 'sessions#new', as: 'welcome'
 
   get '/logout', to: 'sessions#logout', as: 'logout'
 

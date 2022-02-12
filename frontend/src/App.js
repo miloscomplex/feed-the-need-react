@@ -19,17 +19,22 @@ function App() {
 
   const [user, setUser] = useState()
 
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      fetch(`${API_ROOT}/login`, {
-        headers: {'Authenticate': localStorage.token}
-      })
-      .then(resp => resp.json())
-      .then(user => {
-        setUser(user)
-      })
-    }
-  })
+  // useEffect(() => {
+  //   if (localStorage.getItem('token')) {
+  //     fetch(`${API_ROOT}/login`, {
+  //       headers: {'Authenticate': localStorage.token}
+  //     })
+  //     .then(resp => resp.json())
+  //     .then(user => {
+  //       setUser(user)
+  //     })
+  //   }
+  // })
+
+  const setUserState = (user) => {
+    setUser(user)
+    console.log('setUserState called')
+  }
 
   const handleLogout = () => {
     setUser({})
@@ -48,7 +53,7 @@ function App() {
           <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
           <Route exact path='/needy/add-item' component={AddItem} />
           <Route exact path='/sign-up' component={SignUp} />
-          <Route exact path='/login' setUser={setUser} component={Login} />
+          <Route exact path='/login' setUserState={setUserState} component={Login} />
         </Switch>
         <Footer />
       </div>
