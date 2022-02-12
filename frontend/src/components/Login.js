@@ -36,14 +36,14 @@ function Login(props) {
         <h2>Login for Donator & Needy</h2>
         <form name='login__BoxForm' onSubmit={ ev => handleOnSubmit} >
 
-          <label for='email'>Email:</label>
+          <label>Email:</label>
           <input type='text'
             name='email'
             onChange={ ev => {setEmail(ev.target.value)}}
             value={email.email}
           />
 
-          <label for='password'>Password:</label>
+          <label>Password:</label>
           <input type='text'
             name='password'
             onChange={ ev => {setPassword(ev.target.value)}}

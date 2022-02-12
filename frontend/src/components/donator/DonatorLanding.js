@@ -17,12 +17,12 @@ function DonatorLanding() {
 
         <Link to=''>Edit your profile</Link>
 
-        <activity>
+        <div className='activity'>
           <h3>Your Recent Activity</h3>
           <ul>
-            <li>You have no recent activity to display</li>
+            <li>You have no recent div  to display</li>
           </ul>
-        </activity>
+        </div >
 
         <h2>People In Need</h2>
 

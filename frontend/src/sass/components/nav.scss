@@ -1,4 +1,4 @@
-nav {
+.nav {
   font-size: 1.5rem;
   background-color: rgba(0,0,0, .5);
   transition: all .3s;
@@ -6,9 +6,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 5rem;
+  text-transform: uppercase;
 
 
-  &-links {
+  &__links {
     display: block;
     margin: 0 auto 0 0;
     padding: 1.4rem;

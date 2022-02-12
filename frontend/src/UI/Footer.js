@@ -2,9 +2,9 @@ import Nav from './Nav'
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <div className='footer'>
       <Nav />
-    </footer>
+    </div>
   )
 }
 

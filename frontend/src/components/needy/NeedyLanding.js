@@ -4,7 +4,7 @@ import HeaderNeedy from '../../UI/HeaderNeedy'
 function NeedyLanding() {
   return (
     <div id='wrapper'>
-      
+
       <div id='content' className='needy-landing'>
         <div className='needy-landing__bio'>
           <div className='needy-landing__div'>
@@ -45,7 +45,7 @@ function NeedyLanding() {
           <Link to='add-item' className='needy-landing__btn'>Edit Your List of Needs</Link>
         </div>
 
-        <activity className='space-above'>
+        <div className='activity space-above'>
           <h2>Recently donated items</h2>
           <ul className='needy-landing__donated'>
             <li>No Items have been donated</li>
@@ -53,7 +53,7 @@ function NeedyLanding() {
             <li>No Items have been donated</li>
             <li>No Items have been donated</li>
           </ul>
-        </activity>
+        </div>
 
         <p>
           <Link className='cta__plain' to=''>Delete Your Profile</Link>

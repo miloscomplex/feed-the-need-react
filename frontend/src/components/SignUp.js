@@ -17,7 +17,7 @@ function SignUp() {
     <div id='content' class='signup'>
       <div class='signup__div'>
         <h1>Sign Up Below</h1>
-        <form name='signUpForm' class="signup__form" onSubmit={ e => handleOnSubmit(e)} >
+        <form name='signUpForm' className="signup__form" onSubmit={ e => handleOnSubmit(e)} >
           <label for='name'>Name:</label>
           <input type='text' name='name' onChange={e => setName(e.target.value)} />
 
