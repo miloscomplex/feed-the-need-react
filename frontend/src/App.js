@@ -48,7 +48,7 @@ function App() {
           <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
           <Route exact path='/needy/add-item' component={AddItem} />
           <Route exact path='/sign-up' component={SignUp} />
-          <Route exact path='/login' component={Login} />
+          <Route exact path='/login' setUser={setUser} component={Login} />
         </Switch>
         <Footer />
       </div>

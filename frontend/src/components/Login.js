@@ -17,7 +17,7 @@ function Login(props) {
     }).then(resp => resp.json())
     .then(data => {
       localStorage.setItem('token', data.token)
-      props.handleLogin(data.user)
+      {props.setUser('testing')}
       // send to App Component State
       // remember data is {token: token, user: user}
       // setUser(data.user)

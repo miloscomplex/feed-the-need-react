@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
 
-  post '/login', to: 'sessions#login', as: 'hello_user'
+  post '/login', to: 'sessions#login', as: 'postlogin'
 
-  get '/login', to: 'sessions#token_authenticate', as: 'login'
+  get '/login', to: 'sessions#session_user', as: 'login'
 
   get '/logout', to: 'sessions#logout', as: 'logout'
 
-  root :to => redirect('/login')
+  # root :to => redirect('/login')
 
 
 

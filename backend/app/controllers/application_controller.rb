@@ -1,14 +1,30 @@
 class ApplicationController < ActionController::API
-
-  before_action :require_login
-
+  #
+  # before_action :require_login
+  #
   def logged_in?
     !!session_user
   end
 
-  def require_login
-    render json: {message: 'Please Login'}, status: :unauthorized unless logged_in?
+  # def require_login
+  #   render json: {message: 'Please Login'}, status: :unauthorized unless logged_in?
+  # end
+  #
+  #### START HELPER METHODS
+
+  # Returns the current logged-in user (if any).
+  def session_user
+      session_user ||= User.find_by(id: session[:user_id])
   end
+
+  # Returns true if the user is logged in, false otherwise.
+
+  # Logs out the current user.
+  def logout!
+    session.clear
+  end
+
+  #### END HELPER METHODS
 
   def secret_key
     "iCanBeAnything"
@@ -26,7 +42,7 @@ class ApplicationController < ActionController::API
 
   def session_user
     decoded_hash = decoded_token
-    if !decoded_hash.empty?
+    if !decoded_hash.blank?
       user_id = decoded_hash[0]['user_id']
       @user = User.find_by(id: user_id)
     else
