@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: 'Michael Dutton', email: 'mike@mike.com', user_type: 'needy')
-User.create(name: 'James Dutton', email: 'james@james.com', user_type: 'needy')
-User.create(name: 'Huey Gawker', email: 'huey@huey.com', user_type: 'donator')
+User.create(name: 'Michael Dutton', password: '12345', email: 'mike@mike.com', user_type: 'needy', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim a ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum')
+User.create(name: 'James Dutton', password: '12345', email: 'james@james.com', user_type: 'needy', bio: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum')
+User.create(name: 'Huey Gawker',  password: '12345', email: 'huey@huey.com', user_type: 'donator',  bio: 'Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum')
 
 Item.create(user_id: 2, name: 'coat', qty: 1, category: 'clothing')
 Item.create(user_id: 1, name: 'sleeping bag', qty: 1, category: 'essentials')
