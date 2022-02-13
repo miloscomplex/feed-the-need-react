@@ -17,7 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
 
-  const [user, setUser] = useState()
+  const [user, setUser] = useState('')
 
   // useEffect(() => {
   //   if (localStorage.getItem('token')) {
@@ -31,10 +31,10 @@ function App() {
   //   }
   // })
 
-  const setUserState = (user) => {
-    setUser(user)
-    console.log('setUserState called')
-  }
+  // const setUserState = (user) => {
+  //   setUser(user)
+  //   console.log('setUserState called')
+  // }
 
   const handleLogout = () => {
     setUser({})
@@ -53,7 +53,7 @@ function App() {
           <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
           <Route exact path='/needy/add-item' component={AddItem} />
           <Route exact path='/sign-up' component={SignUp} />
-          <Route exact path='/login' setUserState={setUserState} component={Login} />
+          <Route exact path='/login' component={Login} />
         </Switch>
         <Footer />
       </div>

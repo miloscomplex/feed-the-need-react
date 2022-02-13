@@ -19,14 +19,13 @@ function Login(props) {
       body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
+      console.log(`logging the data`, data)
       localStorage.setItem('token', data.token)
       // send to App Component State
       // remember data is {token: token, user: user}
-      // setUser(data.user)
       setEmail('')
       setPassword('')
-      history.push('/feed-the-need/needy')
-
+      history.push('/needy')
     })
   }
 
@@ -34,7 +33,7 @@ function Login(props) {
     <div className='login'>
       <div className='login__wrapper'>
         <h2>Login for Donator & Needy</h2>
-        <form name='login__BoxForm' onSubmit={ ev => handleOnSubmit} >
+        <form name='login__BoxForm' onSubmit={ ev => handleOnSubmit(ev) } >
 
           <label>Email:</label>
           <input type='text'
