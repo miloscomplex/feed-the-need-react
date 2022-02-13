@@ -19,17 +19,18 @@ function App() {
 
   const [user, setUser] = useState('')
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('token')) {
-  //     fetch(`${API_ROOT}/login`, {
-  //       headers: {'Authenticate': localStorage.token}
-  //     })
-  //     .then(resp => resp.json())
-  //     .then(user => {
-  //       setUser(user)
-  //     })
-  //   }
-  // })
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      fetch(`${API_ROOT}/login`, {
+        headers: {'Authenticate': localStorage.token}
+      })
+      .then(resp => resp.json())
+      .then(user => {
+        console.log('this is useEffect ', user)
+        setUser(user)
+      })
+    }
+  })
 
   // const setUserState = (user) => {
   //   setUser(user)

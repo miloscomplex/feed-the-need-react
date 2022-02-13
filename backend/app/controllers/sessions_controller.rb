@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def new
-    # session_user ||= User.find_by(id: session[:user_id])
-    render :json => {getLogin: "#{session_user} = session user"}
+    session_user ||= User.find_by(id: session[:user_id])
+    render :json => session_user
   end
 
 
