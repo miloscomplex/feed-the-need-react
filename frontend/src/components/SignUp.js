@@ -9,7 +9,7 @@ function SignUp(props) {
   const [bio, setBio] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirm, setPasswordConfirm] = useState();
-  const user_type = props.userType
+  const user_type = 'needy'
   const history = useHistory()
 
   function handleOnSubmit(event) {
@@ -18,7 +18,7 @@ function SignUp(props) {
     fetch(`${API_ROOT}/users`, {
       method: 'POST',
       headers: HEADERS,
-      body: JSON.stringify({ name, email, bio, user_type, password, passwordConfirm })
+      body: JSON.stringify({ name, email, bio, user_type: user_type, password })
     }).then(resp => resp.json())
     .then(data => {
       console.log(`logging the data`, data)
@@ -32,8 +32,8 @@ function SignUp(props) {
   }
 
   return (
-    <div id='content' class='signup'>
-      <div class='signup__div'>
+    <div id='content' className='signup'>
+      <div className='signup__div'>
         <h1>Sign Up Below</h1>
         <form name='signUpForm' className="signup__form" onSubmit={ e => handleOnSubmit(e)} >
           <label>Name:</label>
@@ -47,9 +47,6 @@ function SignUp(props) {
 
           <label>Password:</label>
           <input type='text' name='password' onChange={e => setPassword(e.target.value)} />
-
-          <label>Password Confirmation</label>
-          <input type='text' name='password-confirm' onChange={e => setPasswordConfirm(e.target.value)} />
 
           <input type='submit' value='submit' />
         </form>

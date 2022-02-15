@@ -9,11 +9,11 @@ function Landing() {
       <div className='landing__cta-wrapper'>
         <div className='landing__cta-div'>
           <div className='subhead landing__cta-div__header'>Do you need help?</div>
-          <Link to='/sign-up'>Sign-up</Link>
+          <Link to='needy/sign-up'>Sign-up</Link>
         </div>
         <div className='landing__cta-div'>
           <div className='subhead landing__cta-div__header'>Do you want to help?</div>
-          <Link to='/sign-up'>Sign-up</Link>
+          <Link to='donators/sign-up'>Sign-up</Link>
         </div>
       </div>
       <Login />

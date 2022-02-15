@@ -12,6 +12,8 @@ import AddItem from './components/needy/AddItem'
 import DonatorProfile from './components/donator/DonatorProfile'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
+import DonatorSignUp from './components/donator/DonatorSignUp'
+import NeedySignUp from './components/needy/NeedySignUp'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
@@ -53,7 +55,8 @@ function App() {
           <Route exact path='/donator' component={DonatorLanding} />
           <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
           <Route exact path='/needy/add-item' component={AddItem} />
-          <Route exact path='/sign-up' component={SignUp} />
+          <Route exact path='/donators/sign-up' component={DonatorSignUp} />
+          <Route exact path='/needy/sign-up' component={NeedySignUp} />
           <Route exact path='/login' component={Login} />
         </Switch>
         <Footer />

@@ -32,15 +32,15 @@ function NeedyLanding() {
           <Link to='add-item' className='needy-landing__bio-btn'>Edit your profile</Link>
         </div>
 
-        <div className='needy-landing__needs-div'>
-          <h2 className='space-above'>Your List Of Needs</h2>
-          <ul className='needy-landing__needs-div__ul'>
-            <li>List of needs goes here</li>
-            <li>List of needs goes here</li>
-            <li>List of needs goes here</li>
-            <li>List of needs goes here</li>
-            <li>List of needs goes here</li>
-            <li>List of needs goes here</li>
+        <div className='needy-landing__credits-div'>
+          <h2 className='space-above'>Credits Remaining</h2>
+          <ul className='needy-landing__credits-div__ul'>
+            <li>List of recent purchased items</li>
+            <li>List of recent purchased items</li>
+            <li>List of recent purchased items</li>
+            <li>List of recent purchased items</li>
+            <li>List of recent purchased items</li>
+            <li>List of recent purchased items</li>
           </ul>
           <Link to='add-item' className='needy-landing__btn'>Edit Your List of Needs</Link>
         </div>
