@@ -35,12 +35,15 @@ function NeedyLanding() {
         <div className='needy-landing__credits-div'>
           <h2 className='space-above'>Credits Remaining</h2>
           <ul className='needy-landing__credits-div__ul'>
-            <li>List of recent purchased items</li>
-            <li>List of recent purchased items</li>
-            <li>List of recent purchased items</li>
-            <li>List of recent purchased items</li>
-            <li>List of recent purchased items</li>
-            <li>List of recent purchased items</li>
+            <li>
+              <img className='needy_landing__credits-div__img' />
+              ist of recent obtained items
+            </li>
+            <li>List of recent obtained items</li>
+            <li>List of recent obtained items</li>
+            <li>List of recent obtained items</li>
+            <li>List of recent obtained items</li>
+            <li>List of recent obtained items</li>
           </ul>
           <Link to='add-item' className='needy-landing__btn'>Edit Your List of Needs</Link>
         </div>
