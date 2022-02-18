@@ -14,6 +14,7 @@ import SignUp from './components/SignUp'
 import Login from './components/Login'
 import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
+import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
@@ -58,6 +59,7 @@ function App() {
           <Route exact path='/donators/sign-up' component={DonatorSignUp} />
           <Route exact path='/needy/sign-up' component={NeedySignUp} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/items' component={Items} />
         </Switch>
         <Footer />
       </div>
