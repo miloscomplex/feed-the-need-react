@@ -2,19 +2,14 @@ class SessionsController < ApplicationController
 
   def index
     users = User.all
-    render :json => users
+    render json: users
   end
 
-  def new
-    session_user ||= User.find_by(id: session[:user_id])
-    render :json => session_user
-  end
-
-  def create
+  def login
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       payload = {user_id: user.id}
-      token = encode(payload)
+      token = encode_token(payload)
       render :json => { user: user, token: token, success: "Welcome back, #{user.name}" }
     else
       render :json => {failure: "Log in failed! Username or password invalid."}

@@ -7,11 +7,17 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :users, only: [:create]
 
-  post '/login', to: 'sessions#create', as: 'login'
+  post '/login', to: 'sessions#login', as: 'login'
 
   get '/login', to: 'sessions#new', as: 'welcome'
 
+  get '/auto_login', to: 'sessions#auto_login'
+
+  get '/user_is_authed', to: 'ssessions#user_is_authed'
+
   get '/logout', to: 'sessions#logout', as: 'logout'
+
+
 
   # root :to => redirect('/login')
 

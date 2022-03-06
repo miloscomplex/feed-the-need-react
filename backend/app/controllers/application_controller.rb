@@ -12,13 +12,6 @@ class ApplicationController < ActionController::API
   
   #### START HELPER METHODS
 
-  # Returns the current logged-in user (if any).
-  def session_user
-      session_user ||= User.find_by(id: session[:user_id])
-  end
-
-  # Returns true if the user is logged in, false otherwise.
-
   # Logs out the current user.
   def logout!
     session.clear
@@ -30,15 +23,25 @@ class ApplicationController < ActionController::API
     "iCanBeAnything"
   end
 
+  def auto_login
+    if session_user
+      render json: session_user
+    else 
+      render json: {errors: 'No User Logged In!'}
+  end
+
   #given a payload {user_id: ?} => token
-  def encode(payload)
-    JWT.encode(payload, secret_key, 'HS256')
+  def encode_token(payload)
+    JWT.encode(payload, 'my_secret')
   end
 
   #given a token "abc.345" => payload {user_id: ?}
   def decode(token)
     JWT.decode(token, "iCanBeAnything", true, {algorithm: "HS256"})[0]
   end
+
+  # Returns the current logged-in user (if any).
+  # Returns true if the user is logged in, false otherwise.
 
   def session_user
     decoded_hash = decoded_token
