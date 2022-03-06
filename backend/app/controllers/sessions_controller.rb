@@ -10,8 +10,6 @@ class SessionsController < ApplicationController
     render :json => session_user
   end
 
-
-
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
@@ -23,19 +21,19 @@ class SessionsController < ApplicationController
     end
   end
 
-  # def auto_login
-  #   if session_user
-  #     render json: session_user
-  #   else
-  #     render json: { errors: "No User Logged In"}
-  #   end
-  # end
-  #
-  # def token_authenticate
-  #   token = request.headers["Authenticate"]
-  #   user = User.find(decode(token)["user_id"])
-  #   render json: user
-  # end
+  def auto_login
+    if session_user
+      render json: session_user
+    else
+      render json: { errors: "No User Logged In"}
+    end
+  end
+  
+  def token_authenticate
+    token = request.headers["Authenticate"]
+    user = User.find(decode(token)["user_id"])
+    render json: user
+  end
 
   def logout
     logout!

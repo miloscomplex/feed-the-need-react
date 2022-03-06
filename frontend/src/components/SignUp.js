@@ -8,6 +8,7 @@ function SignUp(props) {
   const [email, setEmail] = useState();
   const [bio, setBio] = useState();
   const [password, setPassword] = useState();
+  const [type, setType] = useState();
   const [passwordConfirm, setPasswordConfirm] = useState();
   const user_type = 'needy'
   const history = useHistory()
@@ -35,7 +36,15 @@ function SignUp(props) {
     <div id='content' className='signup'>
       <div className='signup__div'>
         <h1>Sign Up Below</h1>
-        <form name='signUpForm' className="signup__form" onSubmit={ e => handleOnSubmit(e)} >
+        <form name='sign_up_form' className="signup__form" onSubmit={ e => handleOnSubmit(e)} >
+          <label>Type of User</label>
+          <div className='signup__div__div'>
+            <input type='radio' label="donator" name="user_type" value="donator" onChange={ e => setType(e.target.value)} />
+            <label for="donator" for="donator_id">Donator</label>
+            <input type='radio' label="needy" value="needy" name="user_type" id='needy_id' onChange={ e => setType(e.target.value)} />
+            <label for='needy' for='needy_id'>Needy</label>
+          </div>
+
           <label>Name:</label>
           <input type='text' name='name' onChange={e => setName(e.target.value)} />
 
