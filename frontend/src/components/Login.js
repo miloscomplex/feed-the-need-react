@@ -13,22 +13,21 @@ function Login() {
   function handleOnSubmit(event) {
     event.preventDefault()
 
-    fetch(`${API_ROOT}/users`, {
+    fetch(`${API_ROOT}/login`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
       console.log(`logging the data`, data)
-      localStorage.setItem('token', data.jwt)
-      // props.handleLogin(data.user)
+      localStorage.setItem('token', data.token)
     })
       // send to App Component State
       // remember data is {token: token, user: user}
       // setUser(data)
     setEmail('')
     setPassword('')
-    history.push('/needy')
+    // history.push('/needy')
   }
 
   return (

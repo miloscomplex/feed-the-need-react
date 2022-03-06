@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
   
+  # before_action :require_login
+
   def logged_in?
     !!session_user
   end
@@ -47,6 +49,7 @@ class ApplicationController < ActionController::API
     if !decoded_hash.blank?
       user_id = decoded_hash[0]['user_id']
       @user = User.find_by(id: user_id)
+      render json: @user 
     else
       nil
     end
