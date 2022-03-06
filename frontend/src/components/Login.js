@@ -3,7 +3,7 @@ import { API_ROOT, HEADERS } from '../constants'
 import { useHistory } from "react-router-dom";
 
 
-function Login(props) {
+function Login() {
 
 
   const [email, setEmail] = useState('')
@@ -13,20 +13,22 @@ function Login(props) {
   function handleOnSubmit(event) {
     event.preventDefault()
 
-    fetch(`${API_ROOT}/login`, {
+    fetch(`${API_ROOT}/users`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
       console.log(`logging the data`, data)
-      localStorage.setItem('token', data.token)
+      localStorage.setItem('token', data.jwt)
+      // props.handleLogin(data.user)
+    })
       // send to App Component State
       // remember data is {token: token, user: user}
-      setEmail('')
-      setPassword('')
-      history.push('/needy')
-    })
+      // setUser(data)
+    setEmail('')
+    setPassword('')
+    history.push('/needy')
   }
 
   return (
@@ -37,7 +39,7 @@ function Login(props) {
 
           <label>Email:</label>
           <input type='text'
-            name='email'
+            name='email'xw
             onChange={ ev => {setEmail(ev.target.value)}}
             value={email.email}
           />

@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::API
-  #
-  # before_action :require_login
   
   def logged_in?
     !!session_user
@@ -28,6 +26,7 @@ class ApplicationController < ActionController::API
       render json: session_user
     else 
       render json: {errors: 'No User Logged In!'}
+    end
   end
 
   #given a payload {user_id: ?} => token

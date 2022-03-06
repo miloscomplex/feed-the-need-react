@@ -18,27 +18,30 @@ import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-function App() {
+function App(props) {
 
   const [user, setUser] = useState('')
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      fetch(`${API_ROOT}/login`, {
-        headers: {'Authenticate': localStorage.token}
+    const token = localStorage.getItem('jwt')
+    if (token) {
+      fetch(`${API_ROOT}/auto_login`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       })
       .then(resp => resp.json())
-      .then(user => {
-        console.log('this is useEffect ', user)
-        setUser(user)
+      .then(data => {
+        console.log('this is useEffect ', data)
+        setUser(data)
       })
     }
-  })
+  }, [])
 
-  // const setUserState = (user) => {
-  //   setUser(user)
-  //   console.log('setUserState called')
-  // }
+  const setUserState = (newUser) => {
+    setUser(newUser)
+    console.log('setUserState called')
+  }
 
   const handleLogout = () => {
     setUser({})
