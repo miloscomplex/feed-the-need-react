@@ -16,7 +16,7 @@ import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { UserContext } from './Contexts/UserContext';
+
 
 
 function App(props) {
@@ -52,7 +52,6 @@ function App(props) {
   return (
     <Router basename='feed-the-need'>
       <div className='App'>
-        <UserContextProvider>
           <Header />
           <Switch>
             <Route exact path='/' setUser={setUser} component={Landing} />
@@ -66,7 +65,6 @@ function App(props) {
             <Route exact path='/items' component={Items} />
           </Switch>
           <Footer />
-        </UserContextProvider>
       </div>
     </Router>
   );

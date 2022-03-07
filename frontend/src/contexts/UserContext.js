@@ -4,11 +4,8 @@ export const UserContext = createContext();
 
 function userContext() {
 
-    const [user, setUser] = useState('')
-    state = {
-        token: '',
-        userName: '',
-    }
+    const [user, setUser] = useState('');
+
     
     return (
         <UserContext.Provider value={user} >

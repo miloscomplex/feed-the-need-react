@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :donates
 
   # root 'welcome#index'
-  resources :users 
+  resources :users, only: [:create]
 
   post '/login', to: 'sessions#login', as: 'login'
 
