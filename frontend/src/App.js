@@ -16,6 +16,7 @@ import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import UserContextProvider from './contexts/UserContext';
 
 
 
@@ -52,19 +53,21 @@ function App(props) {
   return (
     <Router basename='feed-the-need'>
       <div className='App'>
-          <Header />
-          <Switch>
-            <Route exact path='/' setUser={setUser} component={Landing} />
-            <Route exact path='/needy' component={NeedyLanding} />
-            <Route exact path='/donator/profile' component={DonatorProfile} />
-            <Route exact path='/donator' component={DonatorLanding} />
-            <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
-            <Route exact path='/needy/add-item' component={AddItem} />
-            <Route exact path='/sign-up' component={DonatorSignUp} />
-            <Route exact path='/login' setUser={setUser} component={Login} />
-            <Route exact path='/items' component={Items} />
-          </Switch>
-          <Footer />
+          <UserContextProvider>
+            <Header />
+            <Switch>
+              <Route exact path='/' setUser={setUser} component={Landing} />
+              <Route exact path='/needy' component={NeedyLanding} />
+              <Route exact path='/donator/profile' component={DonatorProfile} />
+              <Route exact path='/donator' component={DonatorLanding} />
+              <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
+              <Route exact path='/needy/add-item' component={AddItem} />
+              <Route exact path='/sign-up' component={DonatorSignUp} />
+              <Route exact path='/login' setUser={setUser} component={Login} />
+              <Route exact path='/items' component={Items} />
+            </Switch>
+            <Footer />
+          </UserContextProvider>
       </div>
     </Router>
   );

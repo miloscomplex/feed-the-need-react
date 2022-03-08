@@ -25,6 +25,7 @@ function SignUp(props) {
       console.log(`logging the data`, data)
       localStorage.setItem('token', data.token)
       // send to App Component State
+      
       // remember data is {token: token, user: user}
       setEmail('')
       setPassword('')
