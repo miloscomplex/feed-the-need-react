@@ -22,7 +22,6 @@ function Login(props) {
       console.log(`logging the data`, data)
       localStorage.setItem('token', data.token)
       // this doesn't work as expected
-      // const setTheUser = data => { props.setUser(data) }
     })
       // send to App Component State
       // remember data is {token: token, user: user}

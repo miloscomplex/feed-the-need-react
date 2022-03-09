@@ -38,8 +38,8 @@ function App(props) {
       })
       .then(resp => resp.json())
       .then(data => {
+        setUserState(data)
         console.log('this is useEffect ', data)
-        setUser(data)
       })
     }
   }, [])
@@ -58,16 +58,16 @@ function App(props) {
     <Router basename='feed-the-need'>
       <div className='App'>
           <UserContextProvider>
-            <Header />
+            <Header setUserState={setUserState} />
             <Switch>
-              <Route exact path='/' setUser={setUser} component={Landing} />
+              <Route exact path='/' component={Landing} />
               <Route exact path='/needy' component={NeedyLanding} />
               <Route exact path='/donator/profile' component={DonatorProfile} />
               <Route exact path='/donator' component={DonatorLanding} />
               <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
               <Route exact path='/needy/add-item' component={AddItem} />
               <Route exact path='/sign-up' component={DonatorSignUp} />
-              <Route exact path='/login' setUser={setUser} component={Login} />
+              <Route exact path='/login' setUserState={setUserState} component={Login} />
               <Route exact path='/items' component={Items} />
             </Switch>
             <Footer />

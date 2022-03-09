@@ -3,8 +3,11 @@ import HeaderNeedy from '../../UI/HeaderNeedy'
 
 function NeedyLanding() {
 
+  const isTokenSet = localStorage.token
+
   
   return (
+    isTokenSet ? 
     <div id='wrapper'>
 
       <div id='content' className='needy-landing'>
@@ -66,6 +69,15 @@ function NeedyLanding() {
 
 
       </div>
+    </div>
+
+    :
+
+    <div className="wrapper">
+       <div className='needy-landing__bio'>
+         <h1>hello there the token is not valid</h1>
+         </div>
+    
     </div>
   )
 }
