@@ -11,9 +11,12 @@ function UserContextProvider(props) {
 
     );
 
-    
+    let updateUser = () => {
+        setUser({isLoggedIn: true});
+    }
+
     return (
-        <UserContext.Provider value={user} >
+        <UserContext.Provider value={user, updateUser=updateUser } >
             { props.children }
         </UserContext.Provider>
     )

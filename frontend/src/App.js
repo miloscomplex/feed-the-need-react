@@ -17,13 +17,17 @@ import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import UserContextProvider from './contexts/UserContext';
+import { UserContext } from './contexts/UserContext'
+
 
 
 
 function App(props) {
 
   const [user, setUser] = useState('')
+  const contextType = UserContext
 
+  
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
