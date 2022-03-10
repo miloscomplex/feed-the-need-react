@@ -1,4 +1,5 @@
 import './sass/App.scss';
+import ReactDOM from 'react-dom';
 import { API_ROOT, HEADERS } from './constants'
 import React, { useState, useEffect } from 'react';
 import Nav from './UI/Nav';
@@ -42,7 +43,7 @@ function App(props) {
         console.log('this is useEffect ', data)
       })
     }
-  }, [])
+  }, [0])
 
   const setUserState = (newUser) => {
     setUser(newUser)
