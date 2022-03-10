@@ -17,20 +17,17 @@ import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import UserContextProvider from './contexts/UserContext';
-import { UserContext } from './contexts/UserContext'
-
-
+import { connect } from 'react-redux'
 
 
 function App(props) {
 
-  const [user, setUser] = useState('')
-  const contextType = UserContext
 
-  
   useEffect(() => {
     const token = localStorage.getItem('token')
+
+    console.log(token, 'this is useEffect here')
+
     if (token) {
       fetch(`${API_ROOT}/auto_login`, {
         headers: {
@@ -39,27 +36,26 @@ function App(props) {
       })
       .then(resp => resp.json())
       .then(data => {
-        setUserState(data)
-        console.log('this is useEffect ', data)
+        // setUserState(data)
+        console.log('this is useEffect inner', data)
       })
     }
-  }, [0])
+  }, [])
 
   const setUserState = (newUser) => {
-    setUser(newUser)
+    // setUser(newUser)
     console.log('setUserState called')
   }
 
   const handleLogout = () => {
-    setUser({})
+    // setUser({})
     localStorage.removeItem('token')
   }
 
   return (
     <Router basename='feed-the-need'>
       <div className='App'>
-          <UserContextProvider>
-            <Header setUserState={setUserState} />
+            <Header />
             <Switch>
               <Route exact path='/' component={Landing} />
               <Route exact path='/needy' component={NeedyLanding} />
@@ -72,10 +68,15 @@ function App(props) {
               <Route exact path='/items' component={Items} />
             </Switch>
             <Footer />
-          </UserContextProvider>
       </div>
     </Router>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    token: state,
+  }
+}
+
+export default connect(mapStateToProps)(App);

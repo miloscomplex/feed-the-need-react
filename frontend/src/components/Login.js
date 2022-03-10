@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { API_ROOT, HEADERS } from '../constants'
 import { useHistory } from "react-router-dom";
-
+import { connect } from 'react-redux';
 
 function Login(props) {
 
@@ -30,7 +30,10 @@ function Login(props) {
     // history.push('/needy')
   }
 
+  console.log(props.token)
+
   return (
+
     <div className='login'>
       <div className='login__wrapper'>
         <h2>Login for Donator & Needy</h2>
@@ -62,4 +65,10 @@ function Login(props) {
   )
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    token: state.token
+  }
+}
+
+export default connect()(Login);

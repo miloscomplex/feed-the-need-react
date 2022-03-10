@@ -9,7 +9,7 @@ function Nav() {
     <div className='nav'>
       <div className='nav__links'>
         <Link to='/'>Home</Link>
-        { isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
+        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
         <Link to='/sign-up'>Sign Up</Link>
       </div>
       <div className='nav__login'>
