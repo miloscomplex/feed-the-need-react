@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    user = User.
     if user.valid?
       payload = {user_id: user.id}
       # token = encode_token(payload)

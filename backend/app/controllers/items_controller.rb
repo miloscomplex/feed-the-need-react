@@ -16,18 +16,19 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item = Item.new(item_params)
-    if item.save
-      render json: item
+    item = Item.create(item_params)
+    byebug
+    if item.valid?
+      render json: {name: item.name, category: item.category}, status: :item_accepted 
     else
-      render json: { errors: item.errors }, status: 422
+      render json: { errors: item.errors.full_messages }, status: :not_acceptable
     end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :qty, :category, :donated, :user_id)
+    params.permit(:name, :qty, :category, :donated, :user_id, :image)
   end
 
 end

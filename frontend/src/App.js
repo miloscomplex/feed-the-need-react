@@ -2,7 +2,6 @@ import './sass/App.scss';
 import ReactDOM from 'react-dom';
 import { API_ROOT, HEADERS } from './constants'
 import React, { useState, useEffect } from 'react';
-import Nav from './UI/Nav';
 import Header from './UI/Header'
 import Footer from './UI/Footer'
 import Landing from './components/Landing'
@@ -22,11 +21,11 @@ import { connect } from 'react-redux'
 
 function App(props) {
 
-
   useEffect(() => {
+
     const token = localStorage.getItem('token')
 
-    console.log(token, 'this is useEffect here')
+    console.log(props.token, 'this is useEffect here')
 
     if (token) {
       fetch(`${API_ROOT}/auto_login`, {
