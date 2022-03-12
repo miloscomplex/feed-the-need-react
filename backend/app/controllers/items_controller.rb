@@ -10,16 +10,10 @@ class ItemsController < ApplicationController
     render json: item
   end
 
-  def new
-    item = Item.new
-    render json: item
-  end
-
   def create
     item = Item.create(item_params)
-    byebug
     if item.valid?
-      render json: {name: item.name, category: item.category}, status: :item_accepted 
+      render json: {name: item.name, category: category}, status: :item_accepted 
     else
       render json: { errors: item.errors.full_messages }, status: :not_acceptable
     end
@@ -28,7 +22,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(:name, :qty, :category, :donated, :user_id, :image)
+    params.permit( :name, :qty, :category, :donated, :user_id, :image)
   end
 
 end
