@@ -41,7 +41,7 @@ function SignUp(props) {
           <label>Type of User</label>
           <div className='signup__div__div'>
             <input type='radio' label="donator" name="user_type" value="donator" onChange={ e => setType(e.target.value)} />
-            <label for="donator" for="donator_id">Donator</label>
+            <label for="donator">Donator</label>
             <input type='radio' label="needy" value="needy" name="user_type" id='needy_id' onChange={ e => setType(e.target.value)} />
             <label for='needy' for='needy_id'>Needy</label>
           </div>

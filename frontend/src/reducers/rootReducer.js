@@ -6,4 +6,18 @@ const rootReducer = (state, action) => {
     return state;
 }
 
+const itemStore = {
+    items: []
+}
+
+function itemReducer(state = itemStore, action) {
+    switch (action.type) {
+        case 'LOAD_ITEMS': 
+            return {...state, itemsList: action.payload, loading: false }
+        default: 
+            return state
+    }
+   
+}
+
 export default rootReducer;

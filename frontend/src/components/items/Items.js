@@ -1,43 +1,31 @@
-import { Link } from 'react-router-dom'
+import React, { Component, useState, useEffect } from 'react';
+import { connect } from 'react-redux'
+import { API_ROOT, HEADERS } from '../../constants';
+import { loadItems } from '../../redux/actions'
 
-function Items() {
-  return (
-    <div id='content' className='items'>
-      <h2>Items content goes here</h2>
-      <ul className='items__ul'>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-        <li>
-          <img className='items__ul__img' />
-          <h3>List of recent obtained items</h3>
-          <p clasName='items__ul__p'>Chia cillum literally palo santo meggings vape consectetur venmo raclette jianbing pok pok af typewriter tacos. Gentrify messenger bag dolore, swag iceland taiyaki photo booth ullamco subway tile voluptate ex williamsburg. Chillwave everyday carry celiac VHS pug, selvage knausgaard tote bag minim in. Disrupt paleo nulla slow-carb seitan, polaroid cold-pressed fam esse migas ugh. Food truck beard readymade meditation cold-pressed iPhone green juice.</p>
-        </li>
-      </ul>
-    </div>
-  )
+function Items(props) {
+
+    const [itemsList, setItemsList] = useState([]) 
+    useEffect(() => {
+        fetch(`${API_ROOT}/items`)
+          .then(resp => resp.json())
+          .then(data => setItemsList(data))
+    },[])
+
+    const itemArr = itemsList.map( item => <li className='items__ul-li'>item needed: {item.name}</li>)
+
+    return (
+        <div id='content' className='items space-above'>
+          <h2>All the items to choose from</h2>
+          <ul className='items__ul'>
+            { itemArr }
+          </ul>
+        </div>
+    )
 }
 
-export default Items;
+const mapStateToProps = state => {
+    return {state}
+}
+
+export default connect(mapStateToProps)(Items)

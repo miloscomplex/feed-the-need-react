@@ -15,19 +15,18 @@ import Login from './components/Login'
 import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
+import ShowAllItems from './components/items/ShowAllItems'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
 function App(props) {
 
+  const token = localStorage.getItem('token')
+
   useEffect(() => {
-
-    const token = localStorage.getItem('token')
-
-    console.log(props.token, 'this is useEffect here')
-
     if (token) {
+      console.log(props.token, 'this is useEffect here')
       fetch(`${API_ROOT}/auto_login`, {
         headers: {
           Authorization: `Bearer ${token}`
@@ -39,7 +38,7 @@ function App(props) {
         console.log('this is useEffect inner', data)
       })
     }
-  }, [])
+  }, [token])
 
   const setUserState = (newUser) => {
     // setUser(newUser)
@@ -61,9 +60,10 @@ function App(props) {
               <Route exact path='/donator/profile' component={DonatorProfile} />
               <Route exact path='/donator' component={DonatorLanding} />
               <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
-              <Route exact path='/needy/add-item' component={AddItem} />
+              <Route exact path='/needy/:user_id/add-item' component={AddItem} />
               <Route exact path='/sign-up' component={DonatorSignUp} />
               <Route exact path='/login' setUserState={setUserState} component={Login} />
+              <Route excact path='/show-items' component={ShowAllItems} />
               <Route exact path='/items' component={Items} />
             </Switch>
             <Footer />
