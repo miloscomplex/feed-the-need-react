@@ -6,7 +6,7 @@ import { loadItems } from '../../redux/actions'
 function Items(props) {
 
     const [itemsList, setItemsList] = useState([]) 
-    
+
     useEffect(() => {
         fetch(`${API_ROOT}/items`)
           .then(resp => resp.json())
@@ -15,17 +15,18 @@ function Items(props) {
 
     const itemArr = itemsList.map( item => 
       <li className='items__ul-li'>
-        <h3>item: {item.name}</h3>
         <img className='items__ul__img' />
-        <p>category: {item.category}
+        <h3>item: {item.name}</h3>
+        <p>category: {item.category}</p>
         <a href='#' >click here to add</a>
-        </p>
 
       </li>)
 
     return (
         <div id='content' className='items space-above'>
           <h2>All the items to choose from</h2>
+            <p className='items__p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque ante ut elit semper lacinia. Duis mollis at nisl vel pretium. Ut vitae condimentum ipsum, a efficitur lorem. Quisque lectus diam, dictum at egestas at, tempor eu turpis. Cras congue risus sit amet pulvinar lacinia. Etiam eu tortor tellus. Vivamus eu dolor eget mi gravida sodales in ut leo. Nulla lobortis porttitor tempus.</p>
+
           <ul className='items__ul'>
             { itemArr }
           </ul>

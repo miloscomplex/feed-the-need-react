@@ -17,11 +17,17 @@
 
   }
 
+  &__p {
+    margin: 6rem 0;
+    padding: 6rem;
+    background-color: aliceblue;
+    text-align: center;
+  }
 
 
   &__ul li {
     min-height: 10rem;
-    min-width: 50%;
+    min-width: 33.33%;
     display: flex;
     flex-wrap: wrap;
 
