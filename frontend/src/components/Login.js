@@ -30,8 +30,6 @@ function Login(props) {
     // history.push('/needy')
   }
 
-  console.log(props.token)
-
   return (
 
     <div className='login'>

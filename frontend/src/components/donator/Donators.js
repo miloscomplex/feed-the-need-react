@@ -3,21 +3,22 @@ import { connect } from 'react-redux'
 import { API_ROOT, HEADERS } from '../../constants';
 import { loadItems } from '../../redux/actions'
 
-function Items(props) {
+function Donators(props) {
 
-    const [itemsList, setItemsList] = useState([]) 
+    const [donatorsList, setDonatorsList] = useState([]) 
     
     useEffect(() => {
-        fetch(`${API_ROOT}/items`)
+        fetch(`${API_ROOT}/users`)
           .then(resp => resp.json())
-          .then(data => setItemsList(data))
+          .then(data => setDonatorsList(data))
     },[])
 
-    const itemArr = itemsList.map( item => 
-      <li className='items__ul-li'>
-        <h3>item: {item.name}</h3>
+    const itemArr = donatorsList.map( donator => 
+      <li className='items__ul-li'> 
         <img className='items__ul__img' />
-        <p>category: {item.category}
+        <h3>donator: {donator.name}</h3>
+       
+        <p>category: {donator.bio}
         <a href='#' >click here to add</a>
         </p>
 
@@ -25,7 +26,7 @@ function Items(props) {
 
     return (
         <div id='content' className='items space-above'>
-          <h2>All the items to choose from</h2>
+          <h2>All the Donators of items</h2>
           <ul className='items__ul'>
             { itemArr }
           </ul>
@@ -42,4 +43,4 @@ const mapStateToProps = state => {
     return {state}
 }
 
-export default connect(mapStateToProps)(Items)
+export default connect(mapStateToProps)(Donators)
