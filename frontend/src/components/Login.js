@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 
 function Login(props) {
 
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
+
+  const handleToken = (data) => {
+    props.setToken(data)
+  }
 
   function handleOnSubmit(event) {
     event.preventDefault()
@@ -21,7 +24,6 @@ function Login(props) {
     .then(data => {
       console.log(`logging the data`, data)
       localStorage.setItem('token', data.token)
-      // this doesn't work as expected
     })
       // send to App Component State
       // remember data is {token: token, user: user}

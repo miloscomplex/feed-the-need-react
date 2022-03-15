@@ -14,7 +14,7 @@ function Donators(props) {
     },[])
 
     const itemArr = donatorsList.map( donator => 
-      <li className='items__ul-li'> 
+      <li key={donator.name} className='items__ul-li'> 
         <img className='items__ul__img' />
         <h3>donator: {donator.name}</h3>
        

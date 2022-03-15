@@ -26,7 +26,7 @@ function Needy(props) {
 
     return (
         <div id='content' className='items space-above'>
-            <h2>All the Needy that are looking for help</h2>
+            <h1>All the Needy that are looking for help</h1>
             <p className='needy__p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque ante ut elit semper lacinia. Duis mollis at nisl vel pretium. Ut vitae condimentum ipsum, a efficitur lorem. Quisque lectus diam, dictum at egestas at, tempor eu turpis. Cras congue risus sit amet pulvinar lacinia. Etiam eu tortor tellus. Vivamus eu dolor eget mi gravida sodales in ut leo. Nulla lobortis porttitor tempus.</p>
 
             <p className='needy__p'>Nullam mattis semper metus, eget consectetur ipsum. Proin rutrum ipsum id volutpat venenatis. Cras orci velit, tempor sit amet tempus blandit, porttitor vel augue. In egestas odio vitae arcu blandit auctor. Sed fermentum odio eu nibh dapibus, sit amet dignissim est porta. Sed ante justo, consequat a molestie et, dapibus eget nulla. Fusce in faucibus orci. Nam nisl justo, rhoncus id cursus sit amet, malesuada sit amet tellus. Aliquam pellentesque ac magna hendrerit accumsan. Donec eget volutpat magna. Morbi sem turpis, tincidunt ac pellentesque eget, vehicula at purus. Nulla non leo purus.</p>

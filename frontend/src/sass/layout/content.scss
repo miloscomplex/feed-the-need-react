@@ -4,8 +4,8 @@
   margin: 0 auto;
   padding: 2.5rem 5rem 9rem 5rem;
   background-color: $color-white;
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
 
   @include respond(phone) {
     padding: 1rem;
