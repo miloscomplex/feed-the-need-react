@@ -14,7 +14,7 @@ function Needy(props) {
     },[])
 
     const itemArr = needyList.map( needy => 
-      <li className='items__ul-li'> 
+      <li key={needy.name} className='items__ul-li'> 
         <img className='items__ul__img' />
         <h3>needy: {needy.name}</h3>
        

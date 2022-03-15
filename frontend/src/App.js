@@ -26,31 +26,30 @@ import { connect } from 'react-redux'
 
 function App(props) {
 
-  const [user,setUser] = useLocalStorage('token', '');
+  const [user,setUser] = useState({})
 
   const token  = localStorage.getItem('token')
 
-  function useLocalStorage(key, initialState) {
-    const [value, setValue] = useState(localStorage.getItem(key) ?? initialState);
-    const updatedSetValue = useCallback( newValue => {
-        if (newValue === initialState || typeof newValue === 'undefined') {
-          localStorage.removeItem(key);
-        } else {
-          localStorage.setItem(key, newValue);
-        }
-        setValue(newValue ?? initialState);
-      },
-      [initialState, key]
-    );
-    return [value, updatedSetValue];
-  }
+  // function useLocalStorage(key, initialState) {
+  //   const [value, setValue] = useState(localStorage.getItem(key) ?? initialState);
+  //   const updatedSetValue = useCallback( newValue => {
+  //       if (newValue === initialState || typeof newValue === 'undefined') {
+  //         localStorage.removeItem(key);
+  //       } else {
+  //         localStorage.setItem(key, newValue);
+  //       }
+  //       setValue(newValue ?? initialState);
+  //     },
+  //     [initialState, key]
+  //   );
+  //   return [value, updatedSetValue];
+  // }
 
   const handleAuthClick = () => {
-    const localToken = localStorage.getItem('token')
-    fetch(`$API_ROOT/user_is_authed`, {
-      method: 'POST',
+    const token = localStorage.getItem('token')
+    fetch(`${API_ROOT}/user_is_authed`, {
       headers: {
-        "Authorization": `Bearer ${localToken}`
+        "Authorization": `Bearer ${token}`
       }
     })
     .then(resp => resp.json())
@@ -68,8 +67,8 @@ function App(props) {
       })
       .then(resp => resp.json())
       .then(data => {
-        setUser(data)
         console.log('this is useEffect inner', data)
+        setUser(data)
       })
     }
   }, [])

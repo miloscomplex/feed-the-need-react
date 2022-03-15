@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  # skip_before_action :require_login, only: [:login, :auto_login]
+
   def new
     session_user ||= User.find_by(id: session[:user_id])
     render json: session_user
@@ -34,6 +36,10 @@ class SessionsController < ApplicationController
     logout!
     # JWT prob goes here
     render json: { session: 'clear' }
+  end
+
+  def user_is_authed
+    render json: {message: "You are authorized"}
   end
 
   private

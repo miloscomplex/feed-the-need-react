@@ -13,9 +13,7 @@ Rails.application.routes.draw do
 
   get '/auto_login', to: 'sessions#auto_login'
 
-  get '/logout', to: 'sessions#logout'
-
-  get '/user_is_authed', to: 'ssessions#user_is_authed'
+  post '/user_is_authed', to: 'sessions#user_is_authed', as: 'user_is_authed'
 
   get '/logout', to: 'sessions#logout', as: 'logout'
 
