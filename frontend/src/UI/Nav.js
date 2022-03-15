@@ -8,8 +8,6 @@ function Nav() {
   return (  
     <div className='nav'>
       <div className='nav__links'>
-        <Link to='/'>Home</Link>
-        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
         <Link to='/sign-up'>Sign Up</Link>
         <Link to='/needy/'>Needy</Link>
         <Link to='/needy/add-item'>add-item</Link>
@@ -18,6 +16,9 @@ function Nav() {
       <div className='nav__login'>
         <div className='nav__login__div icon-basic-case'></div>
         <Link to='/needy/'>Log In</Link>
+        <Link to='/items/'>Items</Link>
+        
+        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
       </div>
     </div>
   )
