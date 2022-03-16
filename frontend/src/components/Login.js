@@ -29,7 +29,7 @@ function Login(props) {
       // remember data is {token: token, user: user}
     setEmail('')
     setPassword('')
-    // history.push('/needy')
+    history.push('/needy')
   }
 
   return (

@@ -79,7 +79,7 @@ function App(props) {
   }
 
   const handleLogout = () => {
-    // setUser({})
+    setUser({})
     localStorage.removeItem('token')
   }
 

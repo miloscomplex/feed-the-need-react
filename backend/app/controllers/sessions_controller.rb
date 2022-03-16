@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  # skip_before_action :require_login, only: [:login, :auto_login]
+  skip_before_action :require_login, only: [:login, :auto_login]
 
   def new
     session_user ||= User.find_by(id: session[:user_id])

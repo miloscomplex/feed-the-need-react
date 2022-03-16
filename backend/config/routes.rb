@@ -9,13 +9,17 @@ Rails.application.routes.draw do
 
   post '/login', to: 'sessions#login', as: 'login'
 
-  get '/login', to: 'sessions#new', as: 'welcome'
+  get '/login', to: 'sessions#token_authenticate', as: 'welcome'
 
   get '/auto_login', to: 'sessions#auto_login'
 
   post '/user_is_authed', to: 'sessions#user_is_authed', as: 'user_is_authed'
 
+  get '/user_is_authed', to: 'sessions#user_is_authed', as: 'user_is_authed-get'
+
   get '/logout', to: 'sessions#logout', as: 'logout'
+
+  post '/logout', to: 'session#logout', as: 'logout-post'
 
 
 
