@@ -18,7 +18,7 @@ function Nav() {
         <Link to='/login'>Log In</Link>
         <Link to='/items/'>Items</Link>
 
-        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
+        { !!isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
       </div>
     </div>
   )

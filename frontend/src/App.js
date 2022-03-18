@@ -30,21 +30,6 @@ function App(props) {
 
   const token  = localStorage.getItem('token')
 
-  // function useLocalStorage(key, initialState) {
-  //   const [value, setValue] = useState(localStorage.getItem(key) ?? initialState);
-  //   const updatedSetValue = useCallback( newValue => {
-  //       if (newValue === initialState || typeof newValue === 'undefined') {
-  //         localStorage.removeItem(key);
-  //       } else {
-  //         localStorage.setItem(key, newValue);
-  //       }
-  //       setValue(newValue ?? initialState);
-  //     },
-  //     [initialState, key]
-  //   );
-  //   return [value, updatedSetValue];
-  // }
-
   const handleAuthClick = () => {
     const token = localStorage.getItem('token')
     fetch(`${API_ROOT}/user_is_authed`, {
@@ -97,8 +82,8 @@ function App(props) {
               <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
               <Route exact path='/needy/:user_id/add-item' component={AddItem} />
               <Route exact path='/sign-up' component={DonatorSignUp} />
-              <Route exact path='/login' nuser={setUser} component={Login} />
-              <Route exact path='/logout' user={setUser} component={Logout} />
+              <Route exact path='/login' user={user} setUser={setUser} component={Login} />
+              <Route exact path='/logout' user={user} setUser={setUser} component={Logout} />
               <Route excact path='/show-items' component={ShowAllItems} />
               <Route exact path='/items' component={Items} />
             </Switch>

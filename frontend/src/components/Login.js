@@ -13,6 +13,10 @@ function Login(props) {
     props.setToken(data)
   }
 
+  const handleFetch = (data, props) => {
+    props.setUser(data)
+  }
+
   function handleOnSubmit(event) {
     event.preventDefault()
 
@@ -23,13 +27,14 @@ function Login(props) {
     }).then(resp => resp.json())
     .then(data => {
       console.log(`logging the data`, data)
+      handleFetch(data)
       localStorage.setItem('token', data.token)
     })
       // send to App Component State
       // remember data is {token: token, user: user}
     setEmail('')
     setPassword('')
-    history.push('/needy')
+    history.push(':user_id/needy')
   }
 
   return (
