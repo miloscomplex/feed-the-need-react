@@ -4,6 +4,7 @@ class ApplicationController < ActionController::API
   
   #### START HELPER METHODS
 
+
   # Logs out the current user.
   def logout!
     session.clear

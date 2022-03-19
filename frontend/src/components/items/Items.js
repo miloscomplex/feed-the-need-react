@@ -1,14 +1,21 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-import { API_ROOT, HEADERS } from '../../constants';
+import { API_ROOT } from '../../constants';
 import { loadItems } from '../../redux/actions'
 
 function Items(props) {
 
     const [itemsList, setItemsList] = useState([]) 
 
+    const token = localStorage.getItem('token')
+
     useEffect(() => {
-        fetch(`${API_ROOT}/items`)
+        fetch(`${API_ROOT}/items`, {
+          method: 'GET',
+          headers: {
+            "Authorization": `Bearer ${token}`
+          } 
+        })
           .then(resp => resp.json())
           .then(data => setItemsList(data))
     },[])
