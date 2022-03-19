@@ -1,13 +1,26 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import HeaderNeedy from '../../UI/HeaderNeedy'
+import { API_ROOT } from '../../constants';
 
 function NeedyLanding() {
 
-  const isTokenSet = localStorage.token
+  const [userList, setUserList] = useState([])
+  const token = localStorage.getItem('token')
+
+  useEffect(() => {
+    fetch(`${API_ROOT}/users`, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      } 
+    })
+      .then(resp => resp.json())
+      .then(data => console.log(data))
+},[])
 
   
   return (
-    isTokenSet ? 
+    token ? 
     <div id='wrapper'>
 
       <div id='content' className='needy-landing'>

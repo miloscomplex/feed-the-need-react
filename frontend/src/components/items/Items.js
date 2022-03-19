@@ -21,7 +21,7 @@ function Items(props) {
     },[])
 
     const itemArr = itemsList.map( item => 
-      <li className='items__ul-li'>
+      <li key={item.name} className='items__ul-li'>
         <img className='items__ul__img' />
         <h3>item: {item.name}</h3>
         <p>category: {item.category}</p>

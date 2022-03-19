@@ -6,6 +6,10 @@
     align-content: center;
     flex-wrap: wrap;
 
+    & li {
+      width: 33%;
+    }
+
     &__img {
       display: block;
       height: 20rem;

@@ -24,7 +24,6 @@ function Login(props) {
       body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
-      setUserProps(data)
       console.log(`logging the data`, data)
       // handleFetch(data)
       localStorage.setItem('token', data.token)

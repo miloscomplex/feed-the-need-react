@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 /* are they login as donator or need? */
 function Nav() {
 
-  const isTokenSet = localStorage.token 
+  const isTokenSet = localStorage.getItem('token')
 
   return (  
     <div className='nav'>
@@ -18,7 +18,7 @@ function Nav() {
         <Link to='/login'>Log In</Link>
         <Link to='/items/'>Items</Link>
 
-        { !!isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
+        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
       </div>
     </div>
   )
