@@ -78,7 +78,7 @@ function App(props) {
               <Route exact path='/needy' component={Needy} />
               <Route exact path='/donators' component={Donators} />
               <Route exact path='/donator/profile' component={DonatorProfile} />
-              <Route exact path='/donator' component={DonatorLanding} />
+              <Route exact path='/donators' component={Donators} />
               <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
               <Route exact path='/needy/:user_id/add-item' component={AddItem} />
               <Route exact path='/sign-up' component={DonatorSignUp} />

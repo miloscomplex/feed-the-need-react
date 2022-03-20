@@ -1,12 +1,13 @@
 import React, { useState, Component } from 'react';
 import { API_ROOT, HEADERS } from '../constants'
 import { useHistory } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect, useStore } from 'react-redux';
 
 function Login(props) {
 
   const setUserProps = props.setUser
 
+  const [userId, setUserId] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
@@ -26,13 +27,15 @@ function Login(props) {
     .then(data => {
       console.log(`logging the data`, data)
       // handleFetch(data)
+      setUserId(data)
       localStorage.setItem('token', data.token)
+
     })
       // send to App Component State
       // remember data is {token: token, user: user}
     setEmail('')
     setPassword('')
-    history.push(`#{:user_id}/needy`)
+    history.push(`#{userId}/needy`)
   }
 
   return (

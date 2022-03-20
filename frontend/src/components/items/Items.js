@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-import { API_ROOT } from '../../constants';
+import { API_ROOT, HEADERS } from '../../constants';
 import { loadItems } from '../../redux/actions'
 
 function Items(props) {
@@ -17,7 +17,9 @@ function Items(props) {
           } 
         })
           .then(resp => resp.json())
-          .then(data => setItemsList(data))
+          .then(data => 
+            setItemsList(data)
+          )
     },[])
 
     const itemArr = itemsList.map( item => 
@@ -42,6 +44,7 @@ function Items(props) {
             <h3>HERE IS SOME ADDITIONAL TEXT</h3>
             <button>submit</button>
           </div>
+          
         </div>
     )
 }

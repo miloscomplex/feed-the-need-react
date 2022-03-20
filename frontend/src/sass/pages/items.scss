@@ -47,4 +47,18 @@
       line-height: 2.2rem;
     }
   }
+
+  @include respond(tab-port) { 
+
+    & li { 
+      width: 50%;
+    }
+  }
+
+  @include respond(phone) {
+
+    & li {
+      width: 100%;
+    }
+  }
 }

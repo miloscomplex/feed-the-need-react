@@ -6,9 +6,14 @@ import { loadItems } from '../../redux/actions'
 function Donators(props) {
 
     const [donatorsList, setDonatorsList] = useState([]) 
+    const token = localStorage.getItem('token')
     
     useEffect(() => {
-        fetch(`${API_ROOT}/users`)
+        fetch(`${API_ROOT}/users`, {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        })
           .then(resp => resp.json())
           .then(data => setDonatorsList(data))
     },[])
