@@ -42,7 +42,7 @@ function App(props) {
   }
 
 
-  useEffect(() => {
+  useEffect( () => {
     const token = localStorage.getItem('token')
     if (token) {
       fetch(`${API_ROOT}/auto_login`, {
@@ -50,13 +50,10 @@ function App(props) {
           Authorization: `Bearer ${token}`
         }
       })
-      .then(resp => resp.json())
-      .then(data => {
-        console.log('this is useEffect inner', data)
-        setUser(data)
-      })
+      .then(resp => console.log(resp))
+      .then(data => setUser(data))
     }
-  }, [])
+  }, []) 
 
   const setUserState = (newUser) => {
     // setUser(newUser)
