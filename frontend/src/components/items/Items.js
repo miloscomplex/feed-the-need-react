@@ -6,6 +6,7 @@ import water from '../../images/water.jpg'
 
 function Items(props) {
 
+    const [success, setSuccess] = useState(false)
     const [itemsList, setItemsList] = useState([]) 
 
     const token = localStorage.getItem('token')
@@ -38,8 +39,9 @@ function Items(props) {
         <h3>item: {item.name}</h3>
         <p>category: {item.category}</p>
         <a href='#' >click here to add</a>
-
       </li>)
+
+    const error = () =>  <li className='items__ul-li'><h3>Hmm... something isn't right</h3></li>
 
     return (
         <div id='content' className='items space-above'>

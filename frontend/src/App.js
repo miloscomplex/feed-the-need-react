@@ -37,8 +37,18 @@ function App(props) {
         "Authorization": `Bearer ${token}`
       }
     })
-    .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(resp => {
+      if (resp.status >= 400) {
+        throw new Error("Server rsponded with an error!")
+      }
+      return resp.json()
+    })
+    .then(data => {
+      setUser(data)
+    }, 
+    err => {
+      console.log('an error has occured')
+    })
   }
 
 
@@ -50,8 +60,18 @@ function App(props) {
           Authorization: `Bearer ${token}`
         }
       })
-      .then(resp => console.log(resp))
-      .then(data => setUser(data))
+      .then(resp => {
+        if (resp.status >= 400) {
+          throw new Error("Server responded with an error!")
+        }
+        return resp.json()
+      })
+      .then(data => {
+        setUser(data)
+      }, 
+      err => { 
+        console.log('an error has occured')
+      })
     }
   }, []) 
 

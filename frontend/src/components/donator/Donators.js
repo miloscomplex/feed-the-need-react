@@ -8,15 +8,28 @@ function Donators(props) {
     const [donatorsList, setDonatorsList] = useState([]) 
     const token = localStorage.getItem('token')
     
-    useEffect(() => {
+    useEffect( () => {
+      const token = localStorage.getItem('token')
+      if (token) {
         fetch(`${API_ROOT}/users`, {
           headers: {
-            "Authorization": `Bearer ${token}`
+            Authorization: `Bearer ${token}`
           }
         })
-          .then(resp => resp.json())
-          .then(data => setDonatorsList(data))
-    },[])
+        .then(resp => {
+          if (resp.status >= 400) {
+            throw new Error("Server responded with an error!")
+          }
+          return resp.json()
+        })
+        .then(data => {
+          setDonatorsList(data)
+        }, 
+        err => { 
+          console.log('an error has occured')
+        })
+      }
+    }, []) 
 
     const itemArr = donatorsList.map( donator => 
       <li key={donator.name} className='items__ul-li'> 
