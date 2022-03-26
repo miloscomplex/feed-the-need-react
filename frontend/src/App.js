@@ -18,7 +18,6 @@ import Logout from './components/Logout'
 import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
-import ShowAllItems from './components/items/ShowAllItems'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -101,7 +100,6 @@ function App(props) {
               <Route exact path='/sign-up' component={DonatorSignUp} />
               <Route exact path='/login' user={user} setUser={setUser} component={Login} />
               <Route exact path='/logout' user={user} setUser={setUser} component={Logout} />
-              <Route excact path='/show-items' component={ShowAllItems} />
               <Route exact path='/items' component={Items} />
             </Switch>
             <Footer />
