@@ -1,5 +1,9 @@
 .items {
 
+  // &:not(:last-child) {
+  //   margin-right: -1.8rem;
+  // } how to exempt last child
+
   &__ul {
     width: 100%;
     display: flex;

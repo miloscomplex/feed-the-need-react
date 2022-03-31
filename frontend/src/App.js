@@ -90,17 +90,16 @@ function App(props) {
             <Header />
             <Link to="#" onClick={ ev => handleAuthClick(ev) }>/Access Auth Route</Link>
             <Switch>
-              <Route exact path='/' user={setUser} component={Landing} />
-              <Route exact path='/needy' component={Needy} />
-              <Route exact path='/donators' component={Donators} />
-              <Route exact path='/donator/profile' component={DonatorProfile} />
-              <Route exact path='/donators' component={Donators} />
-              <Route exact path='/donator/needy-profile' component={DisplayNeedyProfile} />
-              <Route exact path='/needy/:user_id/add-item' component={AddItem} />
-              <Route exact path='/sign-up' component={DonatorSignUp} />
-              <Route exact path='/login' user={user} setUser={setUser} component={Login} />
-              <Route exact path='/logout' user={user} setUser={setUser} component={Logout} />
-              <Route exact path='/items' component={Items} />
+              <Route exact path='/' render={(props) => <Landing userProps={user} {...props} />} />
+              <Route exact path='/needy' render={(props) => <Needy userProps={user} {...props} />} />
+              <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
+              <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />
+              <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
+              <Route exact path='/needy/:user_id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
+              <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
+              <Route exact path='/login' render={(props) => <Login userProps={user} {...props} />} />
+              <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout userProps={user} {...props} />} />
+              <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
             </Switch>
             <Footer />
       </div>

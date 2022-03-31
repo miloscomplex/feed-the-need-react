@@ -7,10 +7,12 @@ function Donators(props) {
 
     const [donatorsList, setDonatorsList] = useState([]) 
     const token = localStorage.getItem('token')
-    
+    console.log(props.userProps)
+
     useEffect( () => {
+      console.log(props.user)
       const token = localStorage.getItem('token')
-      if (token) {
+      if (props.userProps) {
         fetch(`${API_ROOT}/users`, {
           headers: {
             Authorization: `Bearer ${token}`
@@ -44,7 +46,7 @@ function Donators(props) {
 
     return (
         <div id='content' className='items space-above'>
-          <h2>All the Donators of items</h2>
+          <h2>{props.userProps.name}, here are all the Donators of items</h2>
           <ul className='items__ul'>
             { itemArr }
           </ul>
