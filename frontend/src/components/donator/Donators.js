@@ -2,35 +2,17 @@ import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { API_ROOT, HEADERS } from '../../constants';
 import { loadItems } from '../../redux/actions'
+import { FETCH } from '../API'
 
 function Donators(props) {
 
     const [donatorsList, setDonatorsList] = useState([]) 
-    const token = localStorage.getItem('token')
+
     console.log(props.userProps)
 
     useEffect( () => {
-      console.log(props.user)
-      const token = localStorage.getItem('token')
-      if (props.userProps) {
-        fetch(`${API_ROOT}/users`, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        .then(resp => {
-          if (resp.status >= 400) {
-            throw new Error("Server responded with an error!")
-          }
-          return resp.json()
-        })
-        .then(data => {
-          setDonatorsList(data)
-        }, 
-        err => { 
-          console.log('an error has occured')
-        })
-      }
+      console.log(props.user);
+      FETCH('users', setDonatorsList);
     }, []) 
 
     const itemArr = donatorsList.map( donator => 

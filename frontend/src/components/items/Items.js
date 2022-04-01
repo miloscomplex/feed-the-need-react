@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { API_ROOT, HEADERS } from '../../constants';
 import { loadItems } from '../../redux/actions'
 import water from '../../images/water.jpg'
+import { FETCH } from '../API'
 
 function Items(props) {
 
@@ -12,25 +13,7 @@ function Items(props) {
     const token = localStorage.getItem('token')
 
     useEffect(() => {
-        fetch(`${API_ROOT}/items`, {
-          method: 'GET',
-          headers: {
-            "Authorization": `Bearer ${token}`
-          } 
-        })
-          .then(resp => {
-            if (resp.status >= 400) {
-              throw new Error("Server responded with an error!")
-            }
-            return resp.json()
-            }
-          )
-          .then(data => {
-            setItemsList(data)
-          }, 
-          err => {
-            console.log('an error has occured')
-          })
+      FETCH('/items', setItemsList)
     },[])
 
     const itemArr = itemsList.map( item => 
