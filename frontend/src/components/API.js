@@ -1,4 +1,4 @@
-import { API_ROOT, HEADERS } from './../constants'
+import { API_ROOT, HEADERS } from '../constants'
 
 export const FETCH = (url, state) => {
     const token = localStorage.getItem('token')

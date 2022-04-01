@@ -1,7 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-import { API_ROOT, HEADERS } from '../../constants';
-import { loadItems } from '../../redux/actions'
 import { FETCH } from '../API'
 
 function Donators(props) {
@@ -41,8 +39,4 @@ function Donators(props) {
     )
 }
 
-const mapStateToProps = state => {
-    return {state}
-}
-
-export default connect(mapStateToProps)(Donators)
+export default Donators

@@ -10,7 +10,7 @@ import Needy from './components/needy/Needy'
 import Donators from './components/donator/Donators';
 import DonatorLanding from './components/donator/DonatorLanding'
 import DisplayNeedyProfile from './components/donator/DisplayNeedyProfile'
-import AddItem from './components/needy/AddItem'
+import AddItem from './components/donator/AddItem'
 import DonatorProfile from './components/donator/DonatorProfile'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
@@ -109,10 +109,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    token: state,
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
