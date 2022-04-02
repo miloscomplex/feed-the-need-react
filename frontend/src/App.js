@@ -18,12 +18,10 @@ import Logout from './components/Logout'
 import DonatorSignUp from './components/donator/DonatorSignUp'
 import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
+import Item from './components/items/item'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { FETCH } from './components/API'
-
-
-
 
 function App(props) {
   
@@ -102,6 +100,7 @@ function App(props) {
               <Route exact path='/login' render={(props) => <Login userProps={user} {...props} />} />
               <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout userProps={user} {...props} />} />
               <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
+              <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
             </Switch>
             <Footer />
       </div>
