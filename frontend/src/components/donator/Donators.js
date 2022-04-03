@@ -10,7 +10,7 @@ function Donators(props) {
 
     useEffect( () => {
       console.log(props.user);
-      FETCH('users', setDonatorsList);
+      FETCH('/users/', setDonatorsList);
     }, []) 
 
     const itemArr = donatorsList.map( donator => 

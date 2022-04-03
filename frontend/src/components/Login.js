@@ -29,13 +29,12 @@ function Login(props) {
       // handleFetch(data)
       setUserId(data)
       localStorage.setItem('token', data.token)
-
+      history.push(`/users/${userId}`)
     })
       // send to App Component State
       // remember data is {token: token, user: user}
     setEmail('')
     setPassword('')
-    history.push(`#{userId}/needy`)
   }
 
   return (
@@ -47,7 +46,7 @@ function Login(props) {
 
           <label>Email:</label>
           <input type='text'
-            name='email'xw
+            name='email'
             onChange={ ev => {setEmail(ev.target.value)}}
             value={email.email}
           />

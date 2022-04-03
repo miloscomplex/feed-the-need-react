@@ -88,7 +88,7 @@ function App(props) {
     <Router basename='feed-the-need'>
       <div className='App'>
             <Header />
-            <Link to="#" onClick={ ev => handleAuthClick(ev) }>/Access Auth Route</Link>
+           
             <Switch>
               <Route exact path='/' render={(props) => <Landing userProps={user} {...props} />} />
               <Route exact path='/needy' render={(props) => <Needy userProps={user} {...props} />} />
@@ -102,10 +102,9 @@ function App(props) {
               <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
               <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
               <Route exact path='/users/:id' render={routerProps => <User userProps={user} {...routerProps} />} />
-
-
               <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
             </Switch>
+            
             <Footer />
       </div>
     </Router>

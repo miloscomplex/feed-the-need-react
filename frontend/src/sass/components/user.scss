@@ -1,0 +1,21 @@
+.user {
+
+    &__dashboard {
+        display: flex;
+        width: 100%;
+
+        & h2 {
+            display: block;
+            width: 100%;
+        }
+
+        &-donations {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+    }
+
+
+
+}
