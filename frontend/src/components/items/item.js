@@ -37,11 +37,6 @@ function Item(props) {
           <ul className='item__ul'>
             {itemArr(item)}
           </ul>
-
-          <div className='items__div space-above'>
-            <h3>HERE IS SOME ADDITIONAL TEXT</h3>
-            <button>submit</button>
-          </div>
         </div>
     )
 }
