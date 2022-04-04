@@ -6,9 +6,11 @@ function User(props) {
 
     const userProps = props.userProps
     const [user, setUser] = useState([]) 
+    const [donations, setDonations] = useState([])
 
     useEffect(() => {
         FETCH(`/users/${userProps.id}`, setUser)
+
       },[])
 
     const userArr = userInfo => {
@@ -24,24 +26,29 @@ function User(props) {
         <div id='content' className='user space-above'>
             <h1>Hello,</h1>
             <ul>{userArr(userProps)}</ul>
+
+            <h2>Your Dashboard</h2>
             <div className='user__dashboard'>
-                <h2>Your Dashboard</h2>
-                <div className='user__dashboard-donations space-above'>
-                    <h3>Donations</h3>
+                <div className='user__dashboard-donations'>
                     <ul>
-                        <li>Donations listing goes here</li>
+                        <h3>Donations</h3>
+                        <li>No Donations listing at this time.</li>
                     </ul>
                 </div>
                 <div className='user__dashboard-users'>
-                    <h3>New Users</h3>
                     <ul> 
-                        <li>Users Dashboard goes here</li>
+                        <li>
+                            <h3>New Users</h3>
+                            Users Dashboard goes here
+                        </li>
                     </ul>
                 </div>
                 <div className='user__dashboard-stats spaceabove'>
-                    <h3>Stats</h3>
                     <ul> 
-                        <li>Stats will go here</li>
+                        <li>
+                        <h3>Stats</h3>
+                            Stats will go here
+                        </li>
                     </ul>
                 </div>
             </div>

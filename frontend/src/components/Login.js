@@ -25,11 +25,11 @@ function Login(props) {
       body: JSON.stringify({email, password})
     }).then(resp => resp.json())
     .then(data => {
-      console.log(`logging the data`, data)
+      console.log(`logging the data`, data.user)
       // handleFetch(data)
       setUserId(data)
       localStorage.setItem('token', data.token)
-      history.push(`/users/${userId}`)
+      history.push(`/users/${data.user.id}`)
     })
       // send to App Component State
       // remember data is {token: token, user: user}
