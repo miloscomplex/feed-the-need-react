@@ -4,6 +4,8 @@ import { FETCH } from '../API'
 
 function User(props) { 
 
+    const token = localStorage.token
+    
     const userProps = props.userProps
     const [user, setUser] = useState([]) 
     const [donations, setDonations] = useState([])

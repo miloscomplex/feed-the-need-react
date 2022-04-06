@@ -87,7 +87,7 @@ function App(props) {
   return (
     <Router basename='feed-the-need'>
       <div className='App'>
-            <Header />
+            <Header userProps={user} />
            
             <Switch>
               <Route exact path='/' render={(props) => <Landing userProps={user} {...props} />} />
@@ -95,7 +95,7 @@ function App(props) {
               <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
               <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />
               <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
-              <Route exact path='/needy/:user_id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
+              <Route exact path='/users/:id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
               <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
               <Route exact path='/login' render={(props) => <Login userProps={user} {...props} />} />
               <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout userProps={user} {...props} />} />
@@ -104,7 +104,7 @@ function App(props) {
               <Route exact path='/users/:id' render={routerProps => <User userProps={user} {...routerProps} />} />
               <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
             </Switch>
-            
+
             <Footer />
       </div>
     </Router>

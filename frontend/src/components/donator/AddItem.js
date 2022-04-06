@@ -29,14 +29,14 @@ function AddItem() {
       <div className='add-item__wrapper'>
         <h2>Upload your donation</h2>
         <form name='add-item__boxForm' onSubmit={event => handleOnSubmit(event)} >
-          <label for='name'>Description</label>
+          <label htmlFor='name'>Description</label>
           <p>{ name }</p>
           <input type='text' name='name' onChange={e => setName(e.target.value) } />
 
-          <label for='category'>Category</label>
+          <label htmlFor='category'>Category</label>
           <input type='text' name='category' onChange={e => setCategory(e.target.value)} />
 
-          <label for='additional-info'>Additional Information</label>
+          <label htmlFor='additional-info'>Additional Information</label>
           <textarea name='additional-info' onChange={e => setAdditionalInfo(e.target.value)} />
           
           <h3 className='space-above'>Upload an image of your item</h3>

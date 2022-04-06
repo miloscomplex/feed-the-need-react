@@ -1,24 +1,31 @@
 import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 
 /* are they login as donator or need? */
-function Nav() {
+function Nav(props) {
+  let link = ''
+  const token = localStorage.token
+  const isUserSet = props.userProps
 
-  const isTokenSet = localStorage.getItem('token')
+  const [user, setUser] = useState([])
+
+  if (token && isUserSet) {
+    const id = isUserSet.id
+    link = `/users/${id}`
+  }
+
 
   return (  
     <div className='nav'>
       <div className='nav__links'>
-        <Link to='/sign-up'>Sign Up</Link>
-        <Link to='/needy/'>Needy</Link>
-        <Link to='/needy/add-item'>add-item</Link>
-        <Link to='/donator'>Donator</Link>
+        {  !isUserSet ? <Link to='/sign-up'>Sign Up</Link> : <a href={link} >Home</a> }
       </div>
       <div className='nav__login'>
-        <div className='nav__login__div icon-basic-case'></div>
-        <Link to='/login'>Log In</Link>
+        <div className='nav__login__div'></div>
+
         <Link to='/items/'>Items</Link>
 
-        { !isTokenSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
+        { !isUserSet ? <Link to='/login'>Log In</Link> : <Link to='/logout'>Log Out</Link> }
       </div>
     </div>
   )
