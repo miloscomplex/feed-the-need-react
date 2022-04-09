@@ -18,7 +18,9 @@ function Items(props) {
       FETCH('/items', setItemsList)
     },[])
 
-    const itemArr = itemsList.map( item => 
+    console.log(itemsList)
+
+    const itemArr = itemsList.map( item =>
       <li key={item.name} className='items__ul-li'>
         <p>{userProps.name}</p>
         {/* <img className='items__ul__img' src={water} /> */}

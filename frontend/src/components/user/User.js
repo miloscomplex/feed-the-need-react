@@ -5,10 +5,9 @@ import { FETCH } from '../API'
 function User(props) { 
 
     const token = localStorage.token
-    const userProps = props.userProps
-    
-    
-    const userArr = user => {
+    const user = props.userProps
+
+    const userArr = () => {
         console.log('user= ', user)
         if (!user) {
             return (
@@ -28,7 +27,7 @@ function User(props) {
         <div id='content' className='user space-above'>
             <h1>Hello,</h1>
             <ul>
-                {userArr(userProps)}
+                {userArr()}
             </ul>
 
             <h2>Your Dashboard</h2>

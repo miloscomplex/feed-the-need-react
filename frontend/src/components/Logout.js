@@ -1,14 +1,14 @@
-
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
 
-function Logout() {
+function Logout(props) {
 
-    let clearToken = localStorage.token
+    const setUser = props.setUserProps
 
     useEffect(() => {
-        localStorage.removeItem('token');
+        localStorage.removeItem('token')
+        setUser('')
     }, [])
 
     return (

@@ -17,7 +17,7 @@ function Landing(props) {
           <Link to='donators'>Sign-up</Link>
         </div>
       </div>
-      <Login setUser={props.setUser} />
+      <Login setUser={props.setUser} setUserProps={props.setUserProps} />
 
     </div>
 

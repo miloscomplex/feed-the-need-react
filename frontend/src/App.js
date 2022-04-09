@@ -1,32 +1,28 @@
 import './sass/App.scss';
-import ReactDOM from 'react-dom';
 import { API_ROOT, HEADERS } from './constants'
 import React, { useState, useEffect, useCallback } from 'react';
 import Header from './UI/Header'
 import Footer from './UI/Footer'
 import Landing from './components/Landing'
-import NeedyLanding from './components/needy/NeedyLanding'
 import Needy from './components/needy/Needy'
 import Donators from './components/donator/Donators';
-import DonatorLanding from './components/donator/DonatorLanding'
 import DisplayNeedyProfile from './components/donator/DisplayNeedyProfile'
 import AddItem from './components/donator/AddItem'
 import DonatorProfile from './components/donator/DonatorProfile'
-import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import DonatorSignUp from './components/donator/DonatorSignUp'
-import NeedySignUp from './components/needy/NeedySignUp'
 import Items from './components/items/Items'
 import Item from './components/items/item'
 import FourOFour from './components/FourOFour'
 import User from './components/user/User'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 function App(props) {
   
+  const history = useHistory()
   const [user,setUser] = useState({})
-
   const token  = localStorage.getItem('token')
 
   const handleAuthClick = () => {
@@ -47,6 +43,7 @@ function App(props) {
     }, 
     err => {
       console.log('an error has occured')
+      history.push('/login')
     })
   }
 
@@ -97,11 +94,11 @@ function App(props) {
               <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
               <Route exact path='/users/:id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
               <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
-              <Route exact path='/login' render={(props) => <Login userProps={user} {...props} />} />
-              <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout userProps={user} {...props} />} />
+              <Route exact path='/login' render={(props) => <Login setUserProps={setUser} userProps={user} {...props} />} />
+              <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout setUserProps={setUser} {...props} />} />
               <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
               <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
-              <Route exact path='/users/:id' render={routerProps => <User userProps={user} {...routerProps} />} />
+              <Route exact path='/users/:id' render={routerProps => <User setUserProps={setUser} userProps={user} {...routerProps} />} />
               <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
             </Switch>
 

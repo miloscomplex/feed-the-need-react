@@ -1,13 +1,13 @@
 import React, { useState, Component } from 'react';
 import { API_ROOT, HEADERS } from '../constants'
-import { useHistory } from "react-router-dom";
-import { connect, useStore } from 'react-redux';
+import { useHistory } from "react-router-dom"
 
 function Login(props) {
 
   const setUserProps = props.setUser
+  const userProps = props.userProps
 
-  const [userId, setUserId] = useState('')
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
@@ -19,20 +19,31 @@ function Login(props) {
   function handleOnSubmit(event) {
     event.preventDefault()
 
+    const processResp = (data) => {
+      console.log(`logging the data`, data.user)
+      localStorage.setItem('token', data.token)
+      setUserProps(data)
+      history.push(`/user/${userProps.id}`)
+    }
+    const setUserProps = props.setUser
+
     fetch(`${API_ROOT}/login`, {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify({email, password})
-    }).then(resp => resp.json())
-    .then(data => {
-      console.log(`logging the data`, data.user)
-      // handleFetch(data)
-      setUserId(data)
-      localStorage.setItem('token', data.token)
-      history.push(`/users/${data.user.id}`)
+    }).then(resp => {
+      if (resp.status >= 400) {
+        throw new Error("Server responded with an error!")
+      }
+      return resp.json()
     })
-      // send to App Component State
-      // remember data is {token: token, user: user}
+    .then(data => {
+      return processResp(data)
+    }, 
+    err => {
+      console.log('an error has occured')
+      history.push(`/login`)
+    })
     setEmail('')
     setPassword('')
   }
@@ -42,7 +53,7 @@ function Login(props) {
     <div className='login'>
       <div className='login__wrapper'>
         <h2>Login for Donator & Needy</h2>
-        <form name='login__BoxForm' onSubmit={ ev => handleOnSubmit(ev) } >
+        <form name='login__BoxForm' onSubmit={ ev => handleOnSubmit(ev, setUserProps) } >
 
           <label>Email:</label>
           <input type='text'
@@ -76,4 +87,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect()(Login);
+export default Login;
