@@ -5,29 +5,31 @@ import { FETCH } from '../API'
 function User(props) { 
 
     const token = localStorage.token
-    
     const userProps = props.userProps
-    const [user, setUser] = useState([]) 
-    const [donations, setDonations] = useState([])
-
-    useEffect(() => {
-        FETCH(`/users/${userProps.id}`, setUser)
-
-      },[])
-
-    const userArr = userInfo => {
-        return (
-        <li key={userInfo.id} className='items__ul-li'>
-            <h3>userInfo: {userInfo.name}</h3>
-            <p>email: {userInfo.email}</p>
-        </li>
-        )
+    
+    
+    const userArr = user => {
+        console.log('user= ', user)
+        if (!user) {
+            return (
+                <li>Sorry nothing to see here</li>
+            )
+        } else {
+            return (
+                <li key={user.id} className='items__ul-li'>
+                    <h3>user: {user.name}</h3>
+                    <p>email: {user.email}</p>
+                </li>
+            )
+        }
     }
 
     return (
         <div id='content' className='user space-above'>
             <h1>Hello,</h1>
-            <ul>{userArr(userProps)}</ul>
+            <ul>
+                {userArr(userProps)}
+            </ul>
 
             <h2>Your Dashboard</h2>
             <div className='user__dashboard'>

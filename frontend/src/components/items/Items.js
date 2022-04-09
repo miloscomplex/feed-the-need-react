@@ -8,7 +8,6 @@ function Items(props) {
   
 
     const [itemsList, setItemsList] = useState([]) 
-    const [user, setUser] = useState([props.id])
 
     const token = localStorage.getItem('token')
     console.log('props= ', props.userProps)
@@ -17,11 +16,11 @@ function Items(props) {
 
     useEffect(() => {
       FETCH('/items', setItemsList)
-      setUser(userProps)
     },[])
 
     const itemArr = itemsList.map( item => 
       <li key={item.name} className='items__ul-li'>
+        <p>{userProps.name}</p>
         {/* <img className='items__ul__img' src={water} /> */}
         <h3>item: {item.name}</h3>
         <p>category: {item.category}</p>

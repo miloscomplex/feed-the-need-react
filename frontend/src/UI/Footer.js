@@ -1,9 +1,9 @@
 import Nav from './Nav'
 
-function Footer() {
+function Footer(props) {
   return (
     <div className='footer'>
-      <Nav />
+      <Nav userProps={props.userProps} />
     </div>
   )
 }
