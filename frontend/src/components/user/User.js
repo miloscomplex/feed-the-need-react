@@ -9,19 +9,17 @@ function User(props) {
 
     const userArr = () => {
         console.log('user= ', user)
-        if (!user) {
-            return (
-                <li>Sorry nothing to see here</li>
-            )
-        } else {
-            return (
-                <li key={user.id} className='items__ul-li'>
-                    <h3>user: {user.name}</h3>
-                    <p>email: {user.email}</p>
-                </li>
-            )
-        }
+        return (
+            <li key={user.id} className='items__ul-li'>
+                <h3>user: {user.name}</h3>
+                <p>email: {user.email}</p>
+            </li>
+        )
     }
+
+    useEffect( () => {
+        const user = props.userProp
+    },[])
 
     return (
         <div id='content' className='user space-above'>
@@ -33,10 +31,13 @@ function User(props) {
             <h2>Your Dashboard</h2>
             <div className='user__dashboard'>
                 <div className='user__dashboard-donations'>
-                    <ul>
                         <h3>Donations</h3>
                         <li>No Donations listing at this time.</li>
+                    <ul>
+                        <a href=''>upload</a>
+                        <a href='/needy'>See Needy</a>
                     </ul>
+
                 </div>
                 <div className='user__dashboard-users'>
                     <ul> 

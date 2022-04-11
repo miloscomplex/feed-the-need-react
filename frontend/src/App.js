@@ -87,7 +87,7 @@ function App(props) {
             <Header userProps={user} />
            
             <Switch>
-              <Route exact path='/' render={(props) => <Landing userProps={user} {...props} />} />
+              <Route exact path='/' render={(props) => <Landing setUserProps={setUser} userProps={user} {...props} />} />
               <Route exact path='/needy' render={(props) => <Needy userProps={user} {...props} />} />
               <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
               <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />

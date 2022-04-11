@@ -1,16 +1,15 @@
-import React, { Component, useState, useEffect } from 'react';
-import { connect } from 'react-redux'
+import React, { useState, useEffect } from 'react';
 import { API_ROOT, HEADERS } from '../../constants';
-import { loadItems } from '../../redux/actions'
+import { useHistory } from "react-router-dom";
 
 function Needy(props) {
 
+    const history = useHistory()
     const [needyList, setNeedyList] = useState([]) 
     const token = localStorage.getItem('token')
 
     useEffect( () => {
-      const token = localStorage.getItem('token')
-      if (token) {
+      if (props.userProps) {
         fetch(`${API_ROOT}/users`, {
           headers: {
             Authorization: `Bearer ${token}`
@@ -27,6 +26,7 @@ function Needy(props) {
         }, 
         err => { 
           console.log('an error has occured')
+          history.push('/login')
         })
       }
     }, []) 
@@ -37,7 +37,7 @@ function Needy(props) {
         <h3>needy: {needy.name}</h3>
        
         <p>category: {needy.bio}
-        <a href='#' >click here to add</a>
+        <a href='#'>click here to add</a>
         </p>
 
       </li>)
@@ -49,20 +49,16 @@ function Needy(props) {
 
             <p className='needy__p'>Nullam mattis semper metus, eget consectetur ipsum. Proin rutrum ipsum id volutpat venenatis. Cras orci velit, tempor sit amet tempus blandit, porttitor vel augue. In egestas odio vitae arcu blandit auctor. Sed fermentum odio eu nibh dapibus, sit amet dignissim est porta. Sed ante justo, consequat a molestie et, dapibus eget nulla. Fusce in faucibus orci. Nam nisl justo, rhoncus id cursus sit amet, malesuada sit amet tellus. Aliquam pellentesque ac magna hendrerit accumsan. Donec eget volutpat magna. Morbi sem turpis, tincidunt ac pellentesque eget, vehicula at purus. Nulla non leo purus.</p>
             
-            <ul className='items__ul'>
+            <ul className='items__ul space-above'>
             { itemArr }
           </ul>
 
           <div className='items__div space-above'>
             <h3>HERE IS SOME ADDITIONAL TEXT</h3>
-            <button>submit</button>
+            <p className='needy__p'>Proin rutrum ipsum id volutpat venenatis. Cras orci velit, tempor sit amet tempus blandit, porttitor vel augue. In egestas odio vitae arcu blandit auctor. Sed fermentum odio eu nibh dapibus, sit amet dignissim est porta. Sed ante justo, consequat a molestie et, dapibus eget nulla. Fusce in faucibus orci. Nam nisl justo, rhoncus id cursus sit amet, malesuada sit amet tellus. Aliquam pellentesque ac magna hendrerit accumsan. Donec eget volutpat magna. Morbi sem turpis, tincidunt ac pellentesque eget, vehicula at purus. Nulla non leo purus.</p>
           </div>
         </div>
     )
 }
 
-const mapStateToProps = state => {
-    return {state}
-}
-
-export default connect(mapStateToProps)(Needy)
+export default Needy

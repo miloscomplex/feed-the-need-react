@@ -4,17 +4,12 @@ import { useHistory } from "react-router-dom"
 
 function Login(props) {
 
-  const setUserProps = props.setUser
+  const setUserProps = props.setUserProps
   const userProps = props.userProps
-
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
-
-  const handleToken = (data) => {
-    props.setToken(data)
-  }
 
   function handleOnSubmit(event) {
     event.preventDefault()
@@ -22,10 +17,9 @@ function Login(props) {
     const processResp = (data) => {
       console.log(`logging the data`, data.user)
       localStorage.setItem('token', data.token)
-      setUserProps(data)
-      history.push(`/user/${userProps.id}`)
+      setUserProps(data.user)
+      history.push(`/users/${userProps.id}`)
     }
-    const setUserProps = props.setUser
 
     fetch(`${API_ROOT}/login`, {
       method: 'POST',
@@ -38,7 +32,7 @@ function Login(props) {
       return resp.json()
     })
     .then(data => {
-      return processResp(data)
+      processResp(data)
     }, 
     err => {
       console.log('an error has occured')
