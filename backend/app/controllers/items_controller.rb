@@ -19,6 +19,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show_users_items
+    user = User.find_by_id(params[:id])
+    render json: user.items 
+  end
+
   private
 
   def item_params

@@ -6,9 +6,9 @@ function User(props) {
 
     const token = localStorage.token
     const user = props.userProps
+    const id = user.id 
 
     const userArr = () => {
-        console.log('user= ', user)
         return (
             <li key={user.id} className='items__ul-li'>
                 <h3>user: {user.name}</h3>
@@ -17,9 +17,9 @@ function User(props) {
         )
     }
 
-    useEffect( () => {
-        const user = props.userProp
-    },[])
+    useEffect(() => {
+        FETCH(`users/${id}/items`, console.log)
+      },[])
 
     return (
         <div id='content' className='user space-above'>

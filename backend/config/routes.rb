@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'session#logout', as: 'logout-post'
 
+  post '/users/:id/items', to: 'items#show_users_items', as: 'show-items'
+
 
 
   # root :to => redirect('/login')

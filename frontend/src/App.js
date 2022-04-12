@@ -34,12 +34,12 @@ function App(props) {
     })
     .then(resp => {
       if (resp.status >= 400) {
-        throw new Error("Server rsponded with an error!")
+        throw new Error("Server responded with an error!")
       }
       return resp.json()
     })
     .then(data => {
-      setUser(data)
+       return setUser(data)
     }, 
     err => {
       console.log('an error has occured')
@@ -69,12 +69,7 @@ function App(props) {
         console.log('an error has occured')
       })
     }
-  }, []) 
-
-  const setUserState = (newUser) => {
-    // setUser(newUser)
-    console.log('setUserState called')
-  }
+  }, [])
 
   const handleLogout = () => {
     setUser({})
@@ -92,13 +87,13 @@ function App(props) {
               <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
               <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />
               <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
+              <Route exact path='/users/:id' render={routerProps => <User setUserProps={setUser} userProps={user} {...routerProps} />} />
               <Route exact path='/users/:id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
               <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
               <Route exact path='/login' render={(props) => <Login setUserProps={setUser} userProps={user} {...props} />} />
               <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout setUserProps={setUser} {...props} />} />
               <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
               <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
-              <Route exact path='/users/:id' render={routerProps => <User setUserProps={setUser} userProps={user} {...routerProps} />} />
               <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
             </Switch>
 
