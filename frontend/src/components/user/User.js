@@ -7,6 +7,7 @@ function User(props) {
     const token = localStorage.token
     const user = props.userProps
     const id = user.id 
+    const [itemsList, setItemsList] = useState([])
 
     const userArr = () => {
         return (
@@ -17,8 +18,18 @@ function User(props) {
         )
     }
 
+
+    const itemsArr = itemsList.map( item => 
+        <div key={item.id} className='user__dashboard-stats-div'>
+           <p className='user__dashboard-stats-div-p'>Name: {item.name}</p>
+           <p className='user__dashboard-stats-div-p'>Qty: {item.qty}</p>
+
+        </div>
+    )
+
     useEffect(() => {
-        FETCH(`users/${id}/items`, console.log)
+        console.log('routerProps= ', props.match.params.id)
+        FETCH(`users/${props.match.params.id}/items`, setItemsList)
       },[])
 
     return (
@@ -51,7 +62,7 @@ function User(props) {
                     <ul> 
                         <li>
                         <h3>Stats</h3>
-                            Stats will go here
+                           {itemsArr}
                         </li>
                     </ul>
                 </div>

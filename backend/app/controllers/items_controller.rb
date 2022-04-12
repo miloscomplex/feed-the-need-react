@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    item = Item.find_by_id(params[:id])
-    render json: item
+    items = Item.all.where(id: params[:id])
+    render json: items
   end
 
   def create
