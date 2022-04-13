@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def new_users 
+    users = User.limit(5)
+    render json: users 
+  end
+
 
   private
 

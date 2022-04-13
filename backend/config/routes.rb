@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'session#logout', as: 'logout-post'
 
+  get '/users/new-users', to: 'users#new_users', as: 'new-users'
+
   get '/users/:id/items', to: 'items#show_users_items', as: 'show-items'
 
 
