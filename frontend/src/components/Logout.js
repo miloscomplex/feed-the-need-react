@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { FETCH } from './API'
 
 
 function Logout(props) {
@@ -9,6 +10,7 @@ function Logout(props) {
     useEffect(() => {
         localStorage.removeItem('token')
         setUser('')
+        FETCH(`/logout`, console.log)
     }, [])
 
     return (

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'sessions#logout', as: 'logout'
 
-  post '/logout', to: 'session#logout', as: 'logout-post'
+  post '/logout', to: 'sessions#logout', as: 'logout-post'
 
   get '/users/new-users', to: 'users#new_users', as: 'new-users'
 

@@ -8,29 +8,35 @@ function User(props) {
     const user = props.userProps
     const id = user.id 
     const [itemsList, setItemsList] = useState([])
+    const [newUsers, setNewUsers] = useState([])
 
     const userArr = () => {
         return (
             <li key={user.id} className='items__ul-li'>
                 <h3>user: {user.name}</h3>
                 <p>email: {user.email}</p>
+                <p>user type: {user.user_type}</p>
             </li>
         )
     }
-
 
     const itemsArr = itemsList.map( item => 
         <div key={item.id} className='user__dashboard-stats-div'>
            <p className='user__dashboard-stats-div-p'>Name: {item.name}</p>
            <p className='user__dashboard-stats-div-p'>Qty: {item.qty}</p>
-
+           <div className='user__dashboard-stats-img'></div>
         </div>
     )
 
+    const newUsersArr = newUsers.map( user => 
+        <li>{user.name}</li>
+    )
+
     useEffect(() => {
-        console.log('routerProps= ', props.match.params.id)
-        FETCH(`users/${props.match.params.id}/items`, setItemsList)
-      },[])
+        console.log('Props= ', props.userProps);
+        FETCH(`users/${props.match.params.id}/items`, setItemsList);
+        // FETCH(`users/new-users`, setNewUsers);
+    },[])
 
     return (
         <div id='content' className='user space-above'>
@@ -54,7 +60,8 @@ function User(props) {
                     <ul> 
                         <li>
                             <h3>New Users</h3>
-                            Users Dashboard goes here
+                           {newUsersArr}
+                           blah blah glah
                         </li>
                     </ul>
                 </div>
@@ -62,7 +69,9 @@ function User(props) {
                     <ul> 
                         <li>
                         <h3>Stats</h3>
-                           {itemsArr}
+                            <ul> 
+                                {itemsArr ? itemsArr : ''}
+                            </ul>
                         </li>
                     </ul>
                 </div>

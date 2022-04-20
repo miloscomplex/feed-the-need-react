@@ -38,9 +38,11 @@
 
 
             & li {
-                height: 20rem;
+                height: auto;
+                min-height: 20rem;
                 display: block;
                 background-color: $grey-light;
+                margin-top: 1.5rem;
             }
         }
 
@@ -48,7 +50,8 @@
             width: 70%;
             
             & li {
-                height: 20rem;
+                padding: 3rem;
+                height: auto;
                 display: block;
                 background-color: $coral-light;
             }
