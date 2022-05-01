@@ -25,6 +25,7 @@ function App(props) {
   
   const history = useHistory()
   const [user,setUser] = useState({})
+  const [userContext] = React.useState({ name: "Fred"});
   const token  = localStorage.getItem('token')
 
   const handleAuthClick = () => {
@@ -79,31 +80,31 @@ function App(props) {
   }
 
   return (
-    <UserContext.Provider value={user}>
-      <Router basename='feed-the-need'>
-        <div className='App'>
-              <Header userProps={user} />
-            
-              <Switch>
-                <Route exact path='/' render={(props) => <Landing setUserProps={setUser} userProps={user} {...props} />} />
-                <Route exact path='/needy' render={(props) => <Needy userProps={user} {...props} />} />
-                <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
-                <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />
-                <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
-                <Route exact path='/users/:id' render={routerProps => <User setUserProps={setUser} userProps={user} {...routerProps} />} />
-                <Route exact path='/users/:id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
-                <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
-                <Route exact path='/login' render={(props) => <Login setUserProps={setUser} userProps={user} {...props} />} />
-                <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout setUserProps={setUser} {...props} />} />
-                <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
-                <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
-                <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
-              </Switch>
+    <Router basename='feed-the-need'>
+      <div className='App'>
+              <UserContext.Provider userContext={user}>
+                <Header userProps={user} />
+              
+                <Switch>
+                  <Route exact path='/' render={(props) => <Landing setUserProps={setUser} userProps={user} {...props} />} />
+                  <Route exact path='/needy' render={(props) => <Needy userProps={user} {...props} />} />
+                  <Route exact path='/donators' render={(props) => <Donators userProps={user} {...props} />} />
+                  <Route exact path='/donator/profile' render={(props) => <DonatorProfile userProps={user} {...props} />} />
+                  <Route exact path='/donator/needy-profile' render={(props) => <DisplayNeedyProfile userProps={user} {...props} />} />
+                  <Route exact path='/users/:id' render={routerProps => <User setUserProps={setUser} userProps={user} {...routerProps} />} />
+                  <Route exact path='/users/:id/add-item' render={(props) => <AddItem userProps={user} {...props} />} />
+                  <Route exact path='/sign-up' render={(props) => <DonatorSignUp userProps={user} {...props} />} />
+                  <Route exact path='/login' render={(props) => <Login setUserProps={setUser} userProps={user} {...props} />} />
+                  <Route exact path='/logout' user={user} setUser={setUser}render={(props) => <Logout setUserProps={setUser} {...props} />} />
+                  <Route exact path='/items' render={(props) => <Items userProps={user} {...props} />} />
+                  <Route exact path='/items/:id' render={routerProps => <Item userProps={user} {...routerProps} />} />
+                  <Route path='*' render={routerProps => <FourOFour {...routerProps}  />} />
+                </Switch>
 
-              <Footer />
-        </div>
-      </Router>
-    </UserContext.Provider>
+                <Footer />
+              </UserContext.Provider>
+      </div>
+    </Router>
   );
 }
 

@@ -18,7 +18,7 @@ function Login(props) {
       console.log(`logging the data`, data.user)
       localStorage.setItem('token', data.token)
       setUserProps(data.user)
-      history.push(`/users/${userProps.id}`)
+      history.push(`users/${userProps.id}`)
     }
 
     fetch(`${API_ROOT}/login`, {
