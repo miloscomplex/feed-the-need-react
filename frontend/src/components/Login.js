@@ -18,7 +18,7 @@ function Login(props) {
       console.log(`logging the data`, data.user)
       localStorage.setItem('token', data.token)
       setUserProps(data.user)
-      history.push(`users/${userProps.id}`)
+      history.push(`users/${data.user.id}`)
     }
 
     fetch(`${API_ROOT}/login`, {
@@ -73,12 +73,6 @@ function Login(props) {
     </div>
 
   )
-}
-
-const mapStateToProps = (state) => {
-  return {
-    token: state.token
-  }
 }
 
 export default Login;

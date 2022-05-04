@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@rpldy/upload-button": "^0.18.2",
+    "@rpldy/uploady": "^0.18.2",
+    "react-images-uploading": "^3.1.6"
+  }
+}

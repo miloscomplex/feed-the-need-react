@@ -22,7 +22,8 @@ function Needy(props) {
           return resp.json()
         })
         .then(data => {
-          setNeedyList(data)
+          const needy = data.filter( d => d.user_type === 'needy' )
+          setNeedyList(needy)
         }, 
         err => { 
           console.log('an error has occured')

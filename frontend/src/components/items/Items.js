@@ -21,10 +21,10 @@ function Items(props) {
     console.log(itemsList)
 
     const itemArr = itemsList.map( item =>
-      <li key={item.name} className='items__ul-li'>
-        <p>{userProps.name}</p>
+      <li key={item.id} className='items__ul-li'>
         {/* <img className='items__ul__img' src={water} /> */}
         <h3>item: {item.name}</h3>
+        <p>dontated by {item.user.name}</p>
         <p>category: {item.category}</p>
         <Link className='item__ul-li__link' to={`/items/${item.id}`}>click here to view</Link>
       </li>)

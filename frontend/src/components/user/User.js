@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext  } from 'react';
+import { Link } from 'react-router-dom'
 import { FETCH } from '../API'
 import { useHistory } from "react-router-dom"
 import { API_ROOT, HEADERS } from '../../constants'
+
 
 function User(props) { 
 
@@ -77,7 +79,7 @@ function User(props) {
                         <h3>Donations</h3>
                         <li>No Donations listing at this time.</li>
                     <ul>
-                        <a href=''>upload</a>
+                        <Link to={`/users/${props.match.params.id}/add-item`} >Donate An Item</Link>
                         <a href='/needy'>See Needy</a>
                     </ul>
 
@@ -99,6 +101,7 @@ function User(props) {
                             </ul>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>
