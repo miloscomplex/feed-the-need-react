@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   get '/users/:id/items', to: 'items#show_users_items', as: 'show-items'
 
-  post '/users/:id/items', to: 'items#create', as: 'show-items'
+  post '/users/:id/items', to: 'items#create', as: 'add-item'
 
 
 

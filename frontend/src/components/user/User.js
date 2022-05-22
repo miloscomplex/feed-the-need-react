@@ -31,10 +31,10 @@ function User(props) {
     )
 
     const itemsArr = itemsList.map( item => 
-        <div key={item.id} className='user__dashboard-stats-div'>
-           <p className='user__dashboard-stats-div-p'>Name: {item.name}</p>
-           <p className='user__dashboard-stats-div-p'>Qty: {item.qty}</p>
-           <div className='user__dashboard-stats-img'></div>
+        <div key={item.id} className='user__dashboard__items-div'>
+           <p className='user__dashboard__items-p'>Name: {item.name}</p>
+           <p className='user__dashboard__items-p'>Qty: {item.qty}</p>
+           <div className='user__dashboard__items-img'></div>
 
         </div>
     )
@@ -62,19 +62,17 @@ function User(props) {
         }
         console.log('Props= ', props.userProps);
 
-        FETCH(`users/${props.match.params.id}/items`, setItemsList);
+        FETCH(`items/`, setItemsList);
         FETCH(`users/`, setNewUsers);
     },[])
 
     return (
         <div id='content' className='user space-above'>
-            <h1>Hello,</h1>
+            <h2>Your Dashboard</h2>
+            <div className='user__dashboard'>
             <ul>
                 {userArr()}
             </ul>
-
-            <h2>Your Dashboard</h2>
-            <div className='user__dashboard'>
                 <div className='user__dashboard-donations'>
                         <h3>Donations</h3>
                         <li>No Donations listing at this time.</li>
@@ -92,16 +90,11 @@ function User(props) {
                         </li>
                     </ul>
                 </div>
-                <div className='user__dashboard-stats spaceabove'>
-                    <ul> 
-                        <li>
-                        <h3>Stats</h3>
-                            <ul> 
-                                {itemsArr ? itemsArr : ''}
-                            </ul>
-                        </li>
-                    </ul>
-
+                <div className='user__dashboard__items-wrapper spaceabove'>
+                    <h3 className='user__dashboard__items-h3'>Current Items</h3>
+                        <div className='user__dashboard__items'> 
+                            {itemsArr ? itemsArr : ''}
+                        </div>
                 </div>
             </div>
         </div>

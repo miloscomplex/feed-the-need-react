@@ -20,6 +20,7 @@
 
         & h3 {
             width: 100%;
+            
         }
 
         &-donations {
@@ -38,22 +39,38 @@
 
 
             & li {
-                height: auto;
                 min-height: 20rem;
                 display: block;
                 background-color: $grey-light;
                 margin-top: 1.5rem;
+                min-width: 30%;
             }
         }
 
-        &-stats {
-            width: 70%;
-            
-            & li {
-                padding: 3rem;
-                height: auto;
-                display: block;
+        &__items {
+
+            &-wrapper {
                 background-color: $coral-light;
+                width: 70%;
+                padding: 2rem;
+            }
+
+            display: flex;
+            width: 70%;
+            flex-wrap: wrap;
+
+            &-h3 {
+                
+            }
+
+            &-div {
+                padding: 2rem;
+                margin: 1rem;
+                background-color: $coral-light;
+            }
+
+            &-p {
+                width: 20rem;
             }
         }
 
