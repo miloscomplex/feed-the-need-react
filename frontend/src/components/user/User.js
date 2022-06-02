@@ -69,10 +69,8 @@ function User(props) {
     return (
         <div id='content' className='user space-above'>
             <h2>Your Dashboard</h2>
+            <div className='user__profile'></div>
             <div className='user__dashboard'>
-            <ul>
-                {userArr()}
-            </ul>
                 <div className='user__dashboard-donations'>
                         <h3>Donations</h3>
                         <li>No Donations listing at this time.</li>

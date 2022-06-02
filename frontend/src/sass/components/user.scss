@@ -1,6 +1,19 @@
 .user {
+
+    position: relative;
+
     & li {
         border: none;
+    }
+
+    &__profile {
+        position: absolute;
+        top: 5rem;
+        right: 5rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100px;
+        background-color: #ddd;
     }
 
     &__dashboard {
@@ -42,8 +55,12 @@
                 min-height: 20rem;
                 display: block;
                 background-color: $grey-light;
-                margin-top: 1.5rem;
+                margin-top: 0;
                 min-width: 30%;
+            }
+
+            &-div {
+                margin-top: .5rem;
             }
         }
 
