@@ -33,8 +33,8 @@ function Needy(props) {
     }, []) 
 
     const itemArr = needyList.map( needy => 
-      <li key={needy.name} className='items__ul-li'> 
-        <img className='items__ul__img' />
+      <li key={needy.name} className='needy__ul-li'>
+        <img className='needy__ul__img' />
         <h3>needy: {needy.name}</h3>
        
         <p>category: {needy.bio}
@@ -44,7 +44,7 @@ function Needy(props) {
       </li>)
 
     return (
-        <div id='content' className='items space-above'>
+        <div id='content' className='needy space-above'>
             <h1>All the Needy that are looking for help</h1>
             <p className='needy__p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque ante ut elit semper lacinia. Duis mollis at nisl vel pretium. Ut vitae condimentum ipsum, a efficitur lorem. Quisque lectus diam, dictum at egestas at, tempor eu turpis. Cras congue risus sit amet pulvinar lacinia. Etiam eu tortor tellus. Vivamus eu dolor eget mi gravida sodales in ut leo. Nulla lobortis porttitor tempus.</p>
 

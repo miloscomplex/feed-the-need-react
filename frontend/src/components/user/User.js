@@ -24,6 +24,8 @@ function User(props) {
         )
     }
 
+    const yourItemsList = itemsList.filter( item => item.user_id === props.match.params.id )
+
     const newUsersArr = newUsers.map( user =>
         <div key={user.id} className='user__dashboard-new-users-div'>
             <p className='user__dashboard-new-users-p'>{user.name}</p>
@@ -35,9 +37,18 @@ function User(props) {
            <p className='user__dashboard__items-p'>Name: {item.name}</p>
            <p className='user__dashboard__items-p'>Qty: {item.qty}</p>
            <div className='user__dashboard__items-img'></div>
-
         </div>
     )
+
+    const yourItemsArr = yourItemsList.map( item =>
+        <div key={item.id} className='user__dashboard__items-div'>
+           <p className='user__dashboard__items-p'>Name: {item.name}</p>
+           <p className='user__dashboard__items-p'>Qty: {item.qty}</p>
+           <div className='user__dashboard__items-img'></div>
+        </div>
+    ) 
+
+    
 
     useEffect(() => {
         const token = localStorage.getItem('token')
@@ -61,6 +72,7 @@ function User(props) {
           })
         }
         console.log('Props= ', props.userProps);
+        console.log('user= ', props)
 
         FETCH(`items/`, setItemsList);
         FETCH(`users/`, setNewUsers);
@@ -72,8 +84,10 @@ function User(props) {
             <div className='user__profile'></div>
             <div className='user__dashboard'>
                 <div className='user__dashboard-donations'>
-                        <h3>Donations</h3>
-                        <li>No Donations listing at this time.</li>
+                        <h3>Your items</h3>
+                        <ul>
+                            { yourItemsArr }
+                        </ul>
                     <ul>
                         <Link to={`/users/${props.match.params.id}/add-item`} >Donate An Item</Link>
                         <a href='/needy'>See Needy</a>
