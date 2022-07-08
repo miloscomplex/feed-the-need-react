@@ -41,10 +41,34 @@
             height: 20rem;
         }
 
+        &-your-items {
+            display: flex;
+            width: auto;
+            max-width: 100%;
+            
+            &-div {
+                background-color: red;
+
+            }
+
+            &-p {
+                background-color: red;
+            }
+
+        }
+
         &-dashboard {
             min-width: 50%;
             margin: 2rem 0;
         }
+
+        &-new-users {
+
+            &-div {
+                padding: .5rem 0 0 0;
+            }
+        }
+
 
         &-users {
             width: 30%;

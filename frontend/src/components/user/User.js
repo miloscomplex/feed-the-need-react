@@ -24,7 +24,7 @@ function User(props) {
         )
     }
 
-    const yourItemsList = itemsList.filter( item => item.user_id === props.match.params.id )
+    const yourItemsList = itemsList.filter( item => item.user_id === props.id )
 
     const newUsersArr = newUsers.map( user =>
         <div key={user.id} className='user__dashboard-new-users-div'>
@@ -41,8 +41,8 @@ function User(props) {
     )
 
     const yourItemsArr = yourItemsList.map( item =>
-        <div key={item.id} className='user__dashboard__items-div'>
-           <p className='user__dashboard__items-p'>Name: {item.name}</p>
+        <div key={item.id} className='user__dashboard__your-items-div'>
+           <p className='user__dashboard__your-items-p'>Name: {item.name}</p>
            <p className='user__dashboard__items-p'>Qty: {item.qty}</p>
            <div className='user__dashboard__items-img'></div>
         </div>
@@ -52,6 +52,7 @@ function User(props) {
 
     useEffect(() => {
         const token = localStorage.getItem('token')
+
         if (token) {
           fetch(`${API_ROOT}/auto_login`, {
             headers: {
@@ -85,8 +86,8 @@ function User(props) {
             <div className='user__dashboard'>
                 <div className='user__dashboard-donations'>
                         <h3>Your items</h3>
-                        <ul>
-                            { yourItemsArr }
+                        <ul className='user__dashboard-your-items'>
+                          
                         </ul>
                     <ul>
                         <Link to={`/users/${props.match.params.id}/add-item`} >Donate An Item</Link>
@@ -96,16 +97,16 @@ function User(props) {
                 </div>
                 <div className='user__dashboard-users'>
                     <ul> 
-                        <li>
+                        <li className='user__dashboard-new-users'>
                             <h3>New Users</h3>
-                           {newUsersArr}
+                           { newUsersArr }
                         </li>
                     </ul>
                 </div>
                 <div className='user__dashboard__items-wrapper spaceabove'>
                     <h3 className='user__dashboard__items-h3'>Current Items</h3>
                         <div className='user__dashboard__items'> 
-                            {itemsArr ? itemsArr : ''}
+                            { itemsArr ? itemsArr : '' }
                         </div>
                 </div>
             </div>
